@@ -99,7 +99,7 @@
     "checkBack": "Revenez plus tard pour de nouveaux quiz",
     "questions": "questions",
     "helloName": "Bonjour, {{name}} !",
-    "todayMessage": "Aujourd'hui, vous avez {{count}} {{count, plural, one {quiz} other {quizs}}} disponibles. Êtes-vous prêt à tester vos connaissances et améliorer vos compétences ?",
+    "todayMessage": "Aujourd'hui, vous avez 2 quiz disponibles. Êtes-vous prêt à tester vos connaissances et améliorer vos compétences ?",
     "startNow": "Commencer maintenant"
 },
   

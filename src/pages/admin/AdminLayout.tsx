@@ -27,7 +27,7 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick: () => void }) => {
   ];
 
   return (
-    <div className="flex h-full flex-col bg-sky-100">
+    <div className="flex h-full flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 border-r border-slate-200/50">
       <div className="flex h-36 items-center gap-2 px-6">
         <img src={logoImg} alt="Logo" className="h-[220px] w-auto" />
       </div>
@@ -36,7 +36,7 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick: () => void }) => {
           <Link key={item.path} to={item.path} onClick={onLinkClick}>
             <Button
               variant={location.pathname === item.path ? "default" : "ghost"}
-              className="w-full justify-start gap-2"
+              className="w-full justify-start gap-2 font-['Poppins']"
             >
               <item.icon className="h-5 w-5" />
               {item.label}
@@ -45,7 +45,7 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick: () => void }) => {
         ))}
       </nav>
       <div className="p-4">
-        <Button onClick={handleLogout} variant="outline" className="w-full justify-start gap-2">
+        <Button onClick={handleLogout} variant="outline" className="w-full justify-start gap-2 font-['Poppins']">
           <LogOut className="h-5 w-5" />
           {t("admin.logout")}
         </Button>
@@ -66,7 +66,7 @@ const AdminLayout = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-['Poppins']">
       {/* Desktop Sidebar */}
       <aside className="hidden lg:block fixed left-0 top-0 z-40 h-screen w-64">
         <SidebarContent onLinkClick={() => {}} />
@@ -108,11 +108,11 @@ const AdminLayout = () => {
             >
               <Menu className="h-6 w-6" />
             </Button>
-            <h1 className="text-2xl font-bold">{t("admin.title")}</h1>
+            <h1 className="text-2xl font-bold font-['Poppins']">{t("admin.title")}</h1>
           </div>
           <LanguageToggle />
         </header>
-        <main className="p-6">
+        <main className="p-6 font-['Poppins']">
           <Outlet />
         </main>
       </div>

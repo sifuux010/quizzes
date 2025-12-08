@@ -207,12 +207,16 @@ const QuizList = () => {
                         </h2>
                       </div>
                      <p className={`text-gray-700 text-base sm:text-lg leading-relaxed font-medium ${i18n.language === 'ar' ? 'rtl text-right' : ''}`}>
-                       {t("quizList.todayMessage", { count: quizzes.length })}
+                       {quizzes ? t("quizList.todayMessage", { count: quizzes.length }) : t("common.loading")}
                      </p>
                      <Button
-                      onClick={() => quizzes.length > 0 && handleStartQuiz(quizzes[0].id)}
+                      onClick={() => {
+                        const quizSection = document.getElementById('quiz-cards-section');
+                        if (quizSection) {
+                          quizSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
                       className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 font-bold px-6 h-11 rounded-xl shadow-lg hover:shadow-xl transition-all"
-                      disabled={quizzes.length === 0}
                     >
                       <span className={i18n.language === 'ar' ? 'rtl' : ''}>
                         {t("quizList.startNow")}
@@ -240,9 +244,34 @@ const QuizList = () => {
               <div className="absolute -top-4 -right-8 w-40 h-40 bg-gradient-to-br from-blue-200/40 to-cyan-200/40 rounded-full blur-3xl" />
               
               <div className="relative">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-black leading-tight">
-                  {t("quizList.title")}
-                </h1>
+                <div className="mb-4 inline-block">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight font-['Poppins']">
+                    {t("quizList.title")}
+                  </h1>
+                  <div className="mt-2 relative">
+                    <svg 
+                      className="w-full" 
+                      height="12"
+                      viewBox="0 0 200 12" 
+                      preserveAspectRatio="none"
+                    >
+                      <defs>
+                        <linearGradient id="underlineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#3b82f6" />
+                          <stop offset="50%" stopColor="#6366f1" />
+                          <stop offset="100%" stopColor="#1d4ed8" />
+                        </linearGradient>
+                      </defs>
+                      <path 
+                        d="M0,7 Q50,2 100,7 T200,7" 
+                        fill="none"
+                        stroke="url(#underlineGradient)" 
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
                 <p className="text-gray-600 text-lg sm:text-xl max-w-2xl leading-relaxed">
                   {t("quizList.subtitle")}
                 </p>
@@ -250,13 +279,16 @@ const QuizList = () => {
             </div>
           </motion.div>
 
-          {/* Premium Stats Cards */}
+          {/* Quiz Cards Section */}
+          <div id="quiz-cards-section" className="scroll-mt-20">
+          {quizzes.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="mb-12"
           >
+            
             {/* Mobile Layout */}
             <div className="sm:hidden space-y-4">
               <div className="grid grid-cols-2 gap-4">
@@ -411,6 +443,7 @@ const QuizList = () => {
               </motion.div>
             </div>
           </motion.div>
+          )}
 
           {/* Quiz Cards Grid */}
           {quizzes.length === 0 ? (
@@ -475,7 +508,7 @@ const QuizList = () => {
                                 <BookOpen className="h-4 w-4" />
                               </div>
                               <div>
-                                <span className="font-bold text-gray-900 text-sm">{quiz.question_count}</span>
+                                <span className="font-bold text-gray-900 text-sm">36</span>
                                 <span className="text-xs text-gray-500 ml-1">{t("quizList.questions") || "Q's"}</span>
                               </div>
                             </div>
@@ -496,6 +529,7 @@ const QuizList = () => {
               })}
             </div>
           )}
+          </div>
         </div>
       </div>
     </div>

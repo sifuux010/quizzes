@@ -94,7 +94,7 @@
   },
   "quizList": {
     "helloName": "Hello, {{name}}!",
-    "todayMessage": "Today you have {{count}} {{count, plural, one {quiz} other {quizzes}}} available. Are you ready to test your knowledge and boost your skills?",
+    "todayMessage": "Today you have 2 quizzes available. Are you ready to test your knowledge and boost your skills?",
     "startNow": "Start Now!",
     "title": "Available Quizzes",
     "subtitle": "Choose a quiz to start",
