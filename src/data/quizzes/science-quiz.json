@@ -1,0 +1,1264 @@
+{
+  "id": "cba_professional_assessment",
+"title": {
+  "en": "CBA Knowledge Quiz (Competency-Based Approach)",
+  "fr": "Quiz Connaissance APC (Approche Par Compétence)",
+  "ar": "اختبار معرفة المقاربة بالكفاءات"
+  },
+  "description": {
+    "en": "Assessment of understanding, professional attitude, and pedagogical reasoning skills regarding the implementation of the Competency-Based Approach",
+    "fr": "Évaluation de la compréhension, de la posture et de la capacité de raisonnement pédagogique concernant la mise en œuvre de l'Approche par Compétences",
+    "ar": "تقييم مدى فهم المدربين، وسلوكهم المهني، وقدرتهم على التفكير البيداغوجي فيما يتعلق بتطبيق المقاربة بالكفاءات"
+  },
+  "duration": 3600,
+  "targetAudience": {
+    "en": "Master Trainers and Trainers from Public Vocational Training Institutions",
+    "fr": "Formateurs de formateurs et les formateurs des établissements publics",
+    "ar": "مدربو المدربين والمدربون العاملون في المؤسسات العمومية"
+  },
+  "scoringScale": [
+    {
+      "range": "0-35",
+      "level": {
+        "en": "Beginner",
+        "fr": "Initiateur",
+        "ar": "مبتدئ"
+      },
+      "description": {
+        "en": "Limited understanding of CBA",
+        "fr": "Compréhension limitée de l'APC",
+        "ar": "فهم محدود للمقاربة بالكفاءات"
+      }
+    },
+    {
+      "range": "36-49",
+      "level": {
+        "en": "Developing CBA Trainer",
+        "fr": "Formateur APC en développement",
+        "ar": "مدرّب قيد التطوير"
+      },
+      "description": {
+        "en": "Good foundation, stance needs reinforcement",
+        "fr": "Bonne base, posture à renforcer",
+        "ar": "أساس جيد، مع حاجة لتعزيز الموقف المهني"
+      }
+    },
+    {
+      "range": "50-61",
+      "level": {
+        "en": "Confirmed CBA Trainer",
+        "fr": "Formateur APC confirmé",
+        "ar": "مدرّب مؤكد"
+      },
+      "description": {
+        "en": "Clear mastery of the competency approach",
+        "fr": "Maîtrise claire de la démarche compétence",
+        "ar": "إتقان واضح لمنهجية المقاربة بالكفاءات"
+      }
+    },
+    {
+      "range": "62-68",
+      "level": {
+        "en": "Potential Trainer of Trainers",
+        "fr": "Formateur de formateurs potentiel",
+        "ar": "مدرّب مدربين محتمل"
+      },
+      "description": {
+        "en": "Systemic vision and peer coaching ability",
+        "fr": "Vision systémique et accompagnement de pairs",
+        "ar": "رؤية نظامية وقدرة على مرافقة الزملاء"
+      }
+    },
+    {
+      "range": "69-72",
+      "level": {
+        "en": "CBA Expert-Mentor",
+        "fr": "Expert-Mentor APC",
+        "ar": "خبير / موجه"
+      },
+      "description": {
+        "en": "Leadership and pedagogical reference",
+        "fr": "Leadership et référence pédagogique",
+        "ar": "قيادة وبصمة بيداغوجية مرجعية"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "id": "A",
+      "title": {
+        "en": "Pedagogical Vision and Posture",
+        "fr": "Vision et posture pédagogique",
+        "ar": "الرؤية والموقف البيداغوجي"
+      },
+      "questions": [
+        {
+          "id": "A1",
+          "question": {
+            "en": "A learner dominates the discussion and monopolizes the conversation. You:",
+            "fr": "Un apprenant domine la discussion et monopolise la parole. Vous :",
+            "ar": "أحد المتدربين يستأثر بالكلام ولا يترك المجال للآخرين. ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "Stop them immediately to give the floor to others",
+              "fr": "Le stoppez immédiatement pour redonner la parole aux autres",
+              "ar": "توقفه فورًا لإعطاء الكلمة للآخرين"
+            },
+            {
+              "en": "Observe the group dynamics first before intervening",
+              "fr": "Observez d'abord la dynamique avant d'intervenir",
+              "ar": "تراقب أولاً ديناميكية المجموعة قبل التدخل"
+            },
+            {
+              "en": "Change the activity to break the rhythm",
+              "fr": "Changez d'activité pour casser le rythme",
+              "ar": "تغيّر النشاط لكسر الإيقاع"
+            },
+            {
+              "en": "Ignore it, the group will adapt on its own",
+              "fr": "Ignorez, le groupe s'adaptera seul",
+              "ar": "تتجاهل الموقف، فالمجموعة ستتكيف من تلقاء نفسها"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "A2",
+          "question": {
+            "en": "A trainee asks: 'Will you explain the entire method to us?'",
+            "fr": "Un stagiaire demande : 'Vous allez nous expliquer la méthode complète, non ?'",
+            "ar": "يطرح أحد المتدربين السؤال التالي: «هل ستشرحون لنا كل الطريقة؟»"
+          },
+          "options": [
+            {
+              "en": "Yes, to avoid mistakes",
+              "fr": "Oui, pour éviter qu'ils se trompent",
+              "ar": "نعم، لتفادي وقوعهم في الخطأ"
+            },
+            {
+              "en": "No, you must search on your own",
+              "fr": "Non, vous devez chercher seuls",
+              "ar": "لا، يجب أن تبحثوا بأنفسكم"
+            },
+            {
+              "en": "We will discover it together from concrete situations",
+              "fr": "Nous allons la découvrir ensemble à partir de situations concrètes",
+              "ar": "سنكتشفها معًا انطلاقًا من مواقف أو وضعيات عملية ملموسة"
+            },
+            {
+              "en": "Read the method and then apply it",
+              "fr": "Lisez la méthode et appliquez-la ensuite",
+              "ar": "اقرأوا الطريقة ثم طبّقوها بعد ذلك"
+            }
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": "A3",
+          "question": {
+            "en": "A group fails at an exercise. You:",
+            "fr": "Un groupe échoue sur un exercice. Vous :",
+            "ar": "تواجه مجموعة من المتدربين فشلًا في إنجاز تمرين. ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "Give the correct answer",
+              "fr": "Donnez la bonne réponse",
+              "ar": "تُعطيه الإجابة الصحيحة"
+            },
+            {
+              "en": "Guide the group to identify what's missing and why",
+              "fr": "Guidez le groupe pour identifier ce qui manque et pourquoi",
+              "ar": "تُوجّه المجموعة لمساعدتها على تحديد ما الذي ينقص ولماذا"
+            },
+            {
+              "en": "Simplify the exercise",
+              "fr": "Simplifiez l'exercice",
+              "ar": "تُبسّط التمرين"
+            },
+            {
+              "en": "Move to another activity",
+              "fr": "Passez à une autre activité",
+              "ar": "تنتقل إلى نشاط آخر"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "A4",
+          "question": {
+            "en": "A participant objects: 'This is not how we do it in my workshop.'",
+            "fr": "Un participant conteste vos propos : 'Ce n'est pas comme ça qu'on fait dans mon atelier.'",
+            "ar": "أحد المشاركين يعترض على كلامك قائلاً: «نحن لا نعمل بهذه الطريقة في ورشتي.» كيف تتصرّف؟"
+          },
+          "options": [
+            {
+              "en": "Tell them this is the official method here",
+              "fr": "Vous lui dites qu'ici, c'est la méthode officielle",
+              "ar": "تخبره أن هذه هي الطريقة الرسمية المعتمدة هنا"
+            },
+            {
+              "en": "Ask them to explain their approach for collective analysis",
+              "fr": "Vous lui demandez d'expliquer son approche pour l'analyser collectivement",
+              "ar": "تطلب منه أن يشرح طريقته ليتم تحليلها جماعيًا"
+            },
+            {
+              "en": "Avoid the debate",
+              "fr": "Vous évitez le débat",
+              "ar": "تتجنب النقاش"
+            },
+            {
+              "en": "Remind them this is training, not discussion",
+              "fr": "Vous lui rappelez que c'est une formation, pas une discussion",
+              "ar": "تذكّره أن هذا تدريب وليس نقاشًا"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "A5",
+          "question": {
+            "en": "The group is tired and barely engaged. You:",
+            "fr": "Le groupe est fatigué et peu impliqué. Vous :",
+            "ar": "المجموعة متعبة وقليلة التفاعل، ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "Speed up to finish",
+              "fr": "Accélérez pour terminer",
+              "ar": "تُسرِّع الوتيرة لإنهاء العمل بسرعة"
+            },
+            {
+              "en": "Suggest a break",
+              "fr": "Proposez une pause",
+              "ar": "تقترح أخذ استراحة"
+            },
+            {
+              "en": "Reintroduce a realistic simulation activity",
+              "fr": "Réintroduisez une activité de simulation réaliste",
+              "ar": "تعيد إدخال نشاط محاكاة واقعي لتحفيزهم"
+            },
+            {
+              "en": "Blame their lack of involvement",
+              "fr": "Blâmez leur manque d'implication",
+              "ar": "تلومهم على قلة مشاركتهم"
+            }
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": "A6",
+          "question": {
+            "en": "The role of a CBA trainer is to:",
+            "fr": "Le rôle du formateur APC, c'est :",
+            "ar": "ما هو دور المكوّن في المقاربة بالكفاءات؟"
+          },
+          "options": [
+            {
+              "en": "Effectively transmit content",
+              "fr": "Transmettre efficacement les contenus",
+              "ar": "نقل المحتويات بفعالية"
+            },
+            {
+              "en": "Facilitate the mobilization of knowledge in concrete situations",
+              "fr": "Faciliter la mobilisation des savoirs dans des situations concrètes",
+              "ar": "تسهيل توظيف المعارف في وضعيات عملية ملموسة"
+            },
+            {
+              "en": "Verify knowledge",
+              "fr": "Vérifier les connaissances",
+              "ar": "التحقق من المعارف"
+            },
+            {
+              "en": "Apply the program",
+              "fr": "Appliquer le programme",
+              "ar": "تطبيق البرنامج كما هو"
+            }
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": {
+        "en": "Mastery of CBA Concepts and Principles",
+        "fr": "Maîtrise des concepts et principes de l'APC",
+        "ar": "إتقان مفاهيم ومبادئ المقاربة بالكفاءات"
+      },
+      "questions": [
+        {
+          "id": "B1",
+          "question": {
+            "en": "A competency in CBA is:",
+            "fr": "Une compétence en APC est :",
+            "ar": "ما هي الكفاءة في إطار المقاربة بالكفاءات؟"
+          },
+          "options": [
+            {
+              "en": "A sum of knowledge",
+              "fr": "Une somme de connaissances",
+              "ar": "مجموعة من المعارف"
+            },
+            {
+              "en": "The ability to mobilize resources to solve a situation",
+              "fr": "La capacité à mobiliser des ressources pour résoudre une situation",
+              "ar": "القدرة على تعبئة الموارد لحل وضعية معينة"
+            },
+            {
+              "en": "A one-time performance",
+              "fr": "Une performance ponctuelle",
+              "ar": "أداء لحظي ومؤقت"
+            },
+            {
+              "en": "A pedagogical objective",
+              "fr": "Un objectif pédagogique",
+              "ar": "هدف بيداغوجي"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "B2",
+          "question": {
+            "en": "The competency framework serves to:",
+            "fr": "Le référentiel de compétences sert à :",
+            "ar": "ما الغرض من المرجع الخاص بالكفاءات؟"
+          },
+          "options": [
+            {
+              "en": "List training themes",
+              "fr": "Lister les thèmes de formation",
+              "ar": "إدراج مواضيع التكوين"
+            },
+            {
+              "en": "Determine activities, criteria and expected levels",
+              "fr": "Déterminer les activités, critères et niveaux attendus",
+              "ar": "تحديد الأنشطة، والمعايير، والمستويات المنتظرة"
+            },
+            {
+              "en": "Evaluate learner satisfaction",
+              "fr": "Évaluer la satisfaction des apprenants",
+              "ar": "تقييم رضا المتعلمين"
+            },
+            {
+              "en": "Provide course content",
+              "fr": "Fournir le contenu du cours",
+              "ar": "تزويد المحتوى الدراسي للدروس"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "B3",
+          "question": {
+            "en": "Performance criteria serve to:",
+            "fr": "Les critères de performance servent à :",
+            "ar": "ما الغرض من معايير الأداء؟"
+          },
+          "options": [
+            {
+              "en": "Subjectively evaluate participation",
+              "fr": "Évaluer subjectivement la participation",
+              "ar": "تقييم المشاركة بطريقة ذاتية"
+            },
+            {
+              "en": "Measure the achievement of competency acquisition",
+              "fr": "Mesurer l'atteinte de l'acquisition",
+              "ar": "قياس مدى تحقيق اكتساب الكفاءة"
+            },
+            {
+              "en": "Determine grades",
+              "fr": "Déterminer les notes",
+              "ar": "تحديد العلامات"
+            },
+            {
+              "en": "Rank learners",
+              "fr": "Classer les apprenants",
+              "ar": "ترتيب المتعلمين"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "B4",
+          "question": {
+            "en": "A CBA progression is built:",
+            "fr": "Une progression APC se construit :",
+            "ar": "كيف يتم بناء التدرّج البيداغوجي في المقاربة بالكفاءات؟"
+          },
+          "options": [
+            {
+              "en": "By subject",
+              "fr": "Par matière",
+              "ar": "حسب المواد الدراسية"
+            },
+            {
+              "en": "By gradual development of competencies",
+              "fr": "Par développement graduel des compétences",
+              "ar": "حسب التطوّر التدريجي للكفاءات"
+            },
+            {
+              "en": "By chapter",
+              "fr": "Par chapitre",
+              "ar": "حسب الفصول"
+            },
+            {
+              "en": "According to available time",
+              "fr": "Selon le temps disponible",
+              "ar": "حسب الوقت المتاح"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "B5",
+          "question": {
+            "en": "Evaluation in CBA is based on:",
+            "fr": "L'évaluation en APC se base sur :",
+            "ar": "على ماذا تستند عملية التقييم في المقاربة بالكفاءات؟"
+          },
+          "options": [
+            {
+              "en": "Grade averages",
+              "fr": "Des moyennes de notes",
+              "ar": "على معدلات الدرجات"
+            },
+            {
+              "en": "Achievement of observable criteria",
+              "fr": "L'atteinte de critères observables",
+              "ar": "على تحقيق معايير قابلة للملاحظة"
+            },
+            {
+              "en": "Trainer's feeling",
+              "fr": "Le ressenti du formateur",
+              "ar": "على إحساس المدرب أو انطباعه الشخصي"
+            },
+            {
+              "en": "Training duration",
+              "fr": "La durée de la formation",
+              "ar": "على مدة التكوين"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "B6",
+          "question": {
+            "en": "A foundational principle of CBA is:",
+            "fr": "Un principe fondateur de l'APC est :",
+            "ar": "ما هو أحد المبادئ الأساسية في المقاربة بالكفاءات؟"
+          },
+          "options": [
+            {
+              "en": "Passive listening",
+              "fr": "L'écoute passive",
+              "ar": "الإصغاء السلبي"
+            },
+            {
+              "en": "Self-regulation of learning",
+              "fr": "L'auto-régulation de l'apprentissage",
+              "ar": "التنظيم الذاتي للتعلّم"
+            },
+            {
+              "en": "Lecture-style teaching",
+              "fr": "L'exposé magistral",
+              "ar": "الشرح التلقيني (المحاضرة التقليدية)"
+            },
+            {
+              "en": "Obedience to instructions",
+              "fr": "L'obéissance aux consignes",
+              "ar": "الطاعة التامة للتعليمات"
+            }
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": {
+        "en": "Pedagogical Design and Engineering",
+        "fr": "Conception pédagogique et ingénierie",
+        "ar": "التصميم البيداغوجي والهندسة التكوينية"
+      },
+      "questions": [
+        {
+          "id": "C1",
+          "question": {
+            "en": "You have to design a new training sequence. You start with:",
+            "fr": "Vous devez concevoir une nouvelle séquence. Vous commencez par :",
+            "ar": "عليك تصميم حصة تكوينية جديدة، من أين تبدأ؟"
+          },
+          "options": [
+            {
+              "en": "The course content",
+              "fr": "Le contenu du cours",
+              "ar": "من محتوى الدرس"
+            },
+            {
+              "en": "The competencies to be developed and the evaluation criteria",
+              "fr": "Les compétences à développer et les critères d'évaluation",
+              "ar": "من الكفاءات المراد تطويرها ومعايير التقييم"
+            },
+            {
+              "en": "The available materials",
+              "fr": "Les supports disponibles",
+              "ar": "من الوسائل التعليمية المتوفرة"
+            },
+            {
+              "en": "The center's equipment",
+              "fr": "Le matériel du centre",
+              "ar": "من تجهيزات المركز"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "C2",
+          "question": {
+            "en": "To plan a training sequence, you:",
+            "fr": "Pour planifier une séquence, vous :",
+            "ar": "عند تخطيط حصة تكوينية، ماذا تفعل أولاً؟"
+          },
+          "options": [
+            {
+              "en": "Determine the duration before the objectives",
+              "fr": "Déterminez la durée avant les objectifs",
+              "ar": "تحدد المدة الزمنية قبل تحديد الأهداف"
+            },
+            {
+              "en": "Start from the learning situation to be addressed",
+              "fr": "Commencez par la situation d'apprentissage à résoudre",
+              "ar": "تبدأ من الوضعية التعليمية التي يجب حلّها"
+            },
+            {
+              "en": "Follow a pre-filled template without modification",
+              "fr": "Suivez un modèle prérempli sans le modifier",
+              "ar": "تتبع نموذجًا جاهزًا دون تعديله"
+            },
+            {
+              "en": "Copy an old session plan",
+              "fr": "Copiez une ancienne fiche",
+              "ar": "تنسخ بطاقة قديمة"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "C3",
+          "question": {
+            "en": "The role of the framework is to:",
+            "fr": "Le rôle du référentiel est de :",
+            "ar": "ما هو دور المرجع؟"
+          },
+          "options": [
+            {
+              "en": "Describe the subjects",
+              "fr": "Décrire les matières",
+              "ar": "وصف المواد الدراسية"
+            },
+            {
+              "en": "Identify the competencies and their implementation contexts",
+              "fr": "Identifier les compétences et leurs contextes de mise en œuvre",
+              "ar": "تحديد الكفاءات وسياقات تطبيقها"
+            },
+            {
+              "en": "Define the program duration",
+              "fr": "Définir la durée du programme",
+              "ar": "تحديد مدة البرنامج"
+            },
+            {
+              "en": "List teaching content",
+              "fr": "Lister les contenus d'enseignement",
+              "ar": "إدراج محتويات التعليم"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "C4",
+          "question": {
+            "en": "A good CBA pedagogical scenario should:",
+            "fr": "Un bon scénario pédagogique APC doit :",
+            "ar": "ما الذي يجب أن يتميّز به السيناريو البيداغوجي الجيد في المقاربة بالكفاءات؟"
+          },
+          "options": [
+            {
+              "en": "Accumulate knowledge",
+              "fr": "Accumuler des savoirs",
+              "ar": "أن يركّز على تراكم المعارف"
+            },
+            {
+              "en": "Encourage the mobilization of resources in a real situation",
+              "fr": "Favoriser la mobilisation de ressources dans une situation réelle",
+              "ar": "أن يُشجّع على تعبئة الموارد في وضعية حقيقية"
+            },
+            {
+              "en": "Be as simple as possible",
+              "fr": "Être le plus simple possible",
+              "ar": "أن يكون بسيطًا قدر الإمكان"
+            },
+            {
+              "en": "Include a single final test",
+              "fr": "Comporter un test final unique",
+              "ar": "أن يتضمّن اختبارًا نهائيًا واحدًا فقط"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "C5",
+          "question": {
+            "en": "An authentic activity is:",
+            "fr": "Une activité authentique est :",
+            "ar": "ما هي النشاط الأصيل؟"
+          },
+          "options": [
+            {
+              "en": "A memorization exercise",
+              "fr": "Un exercice de mémorisation",
+              "ar": "تمرين للحفظ والاستظهار"
+            },
+            {
+              "en": "A task close to real professional practice or a significant and coherent part of it",
+              "fr": "Une tâche proche de la réalité professionnelle ou une partie de la tâche significative et cohérente",
+              "ar": "مهمة قريبة من الواقع المهني أو جزء ذو معنى واتساق من مهمة حقيقية"
+            },
+            {
+              "en": "A theoretical explanation",
+              "fr": "Une explication théorique",
+              "ar": "شرح نظري"
+            },
+            {
+              "en": "A guided reading",
+              "fr": "Une lecture dirigée",
+              "ar": "قراءة موجهة"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "C6",
+          "question": {
+            "en": "A CBA trainer primarily ensures:",
+            "fr": "Un formateur APC veille surtout à :",
+            "ar": "ما الذي يحرص عليه المكوّن في المقاربة بالكفاءات قبل كل شيء؟"
+          },
+          "options": [
+            {
+              "en": "Completing the program",
+              "fr": "Terminer le programme",
+              "ar": "إنهاء البرنامج"
+            },
+            {
+              "en": "Ensuring alignment between objectives, activities and evaluation",
+              "fr": "Garantir l'alignement entre objectifs, activités et évaluation",
+              "ar": "ضمان الاتساق بين الأهداف، والأنشطة، والتقويم"
+            },
+            {
+              "en": "Managing time",
+              "fr": "Gérer le temps",
+              "ar": "تسيير الوقت"
+            },
+            {
+              "en": "Controlling group behavior",
+              "fr": "Contrôler le comportement du groupe",
+              "ar": "مراقبة سلوك المجموعة"
+            }
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": {
+        "en": "Soft Skills and Educational Leadership",
+        "fr": "Soft Skills et leadership éducatif",
+        "ar": "المهارات اللينة والقيادة التربوية"
+      },
+      "questions": [
+        {
+          "id": "D1",
+          "question": {
+            "en": "A learner criticizes your method in front of the group. You:",
+            "fr": "Un apprenant critique votre méthode devant le groupe. Vous :",
+            "ar": "أحد المشاركين يوجّه انتقادًا لطريقتك أمام المجموعة، ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "React firmly",
+              "fr": "Réagissez fermement",
+              "ar": "تردّ عليه بحزم"
+            },
+            {
+              "en": "Invite them to express their point of view and turn it into a learning opportunity",
+              "fr": "L'invitez à exprimer son point de vue pour en faire un moment d'apprentissage",
+              "ar": "تدعوه للتعبير عن وجهة نظره وتحويل الموقف إلى فرصة للتعلّم"
+            },
+            {
+              "en": "Ignore them",
+              "fr": "L'ignorez",
+              "ar": "تتجاهله"
+            },
+            {
+              "en": "Interrupt the discussion",
+              "fr": "Interrompez la discussion",
+              "ar": "تقاطع النقاش"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "D2",
+          "question": {
+            "en": "A climate of trust is built through:",
+            "fr": "Le climat de confiance se construit par :",
+            "ar": "كيف يُبنى مناخ الثقة داخل المجموعة؟"
+          },
+          "options": [
+            {
+              "en": "Authority",
+              "fr": "L'autorité",
+              "ar": "من خلال السلطة والصرامة"
+            },
+            {
+              "en": "Listening, consistency and respect",
+              "fr": "L'écoute, la cohérence et le respect",
+              "ar": "من خلال الإصغاء، والانسجام، والاحترام"
+            },
+            {
+              "en": "Control of silence",
+              "fr": "Le contrôle du silence",
+              "ar": "من خلال السيطرة على الصمت"
+            },
+            {
+              "en": "Methodological rigor",
+              "fr": "La rigueur méthodologique",
+              "ar": "من خلال الدقة المنهجية"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "D3",
+          "question": {
+            "en": "A good trainer is:",
+            "fr": "Un bon formateur est :",
+            "ar": "من هو المكوّن الجيد؟"
+          },
+          "options": [
+            {
+              "en": "The one who talks the most",
+              "fr": "Celui qui parle le plus",
+              "ar": "من يتحدث أكثر"
+            },
+            {
+              "en": "The one who makes learning happen",
+              "fr": "Celui qui fait apprendre",
+              "ar": "من يجعل المتعلمين يتعلمون فعلاً"
+            },
+            {
+              "en": "The one who follows the guide",
+              "fr": "Celui qui suit le guide",
+              "ar": "من يتبع الدليل حرفيًا"
+            },
+            {
+              "en": "The one who gives grades",
+              "fr": "Celui qui donne des notes",
+              "ar": "من يمنح النقاط (الدرجات)"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "D4",
+          "question": {
+            "en": "Faced with a conflict between trainees, you:",
+            "fr": "Face à un conflit entre stagiaires :",
+            "ar": "عندما يحدث خلاف بين المتدربين، كيف تتصرف؟"
+          },
+          "options": [
+            {
+              "en": "Intervene immediately to impose a solution",
+              "fr": "Vous intervenez immédiatement pour imposer une solution",
+              "ar": "تتدخل فورًا لفرض حلّ"
+            },
+            {
+              "en": "Facilitate a collective regulation process",
+              "fr": "Vous facilitez une régulation collective",
+              "ar": "تُسهّل عملية تسوية جماعية للنزاع"
+            },
+            {
+              "en": "Avoid getting involved",
+              "fr": "Vous évitez de vous en mêler",
+              "ar": "تتجنب التدخل"
+            },
+            {
+              "en": "Wait until the end of the session",
+              "fr": "Vous attendez la fin de séance",
+              "ar": "تنتظر حتى نهاية الحصة"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "D5",
+          "question": {
+            "en": "Pedagogical authority is based on:",
+            "fr": "L'autorité pédagogique repose sur :",
+            "ar": "على ماذا تقوم السلطة التربوية؟"
+          },
+          "options": [
+            {
+              "en": "Status",
+              "fr": "Le statut",
+              "ar": "على المنصب أو الصفة الرسمية"
+            },
+            {
+              "en": "Consistency and relational competence",
+              "fr": "La cohérence et la compétence relationnelle",
+              "ar": "على الاتساق (الانسجام) والكفاءة في التعامل والعلاقات الإنسانية"
+            },
+            {
+              "en": "Firmness",
+              "fr": "La fermeté",
+              "ar": "على الصرامة"
+            },
+            {
+              "en": "Tone of voice",
+              "fr": "Le ton de la voix",
+              "ar": "على نبرة الصوت"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "D6",
+          "question": {
+            "en": "An exemplary trainer:",
+            "fr": "Un formateur exemplaire :",
+            "ar": "من هو المكوّن النموذجي؟"
+          },
+          "options": [
+            {
+              "en": "Imposes themselves",
+              "fr": "S'impose",
+              "ar": "من يفرض نفسه"
+            },
+            {
+              "en": "Inspires trust and engagement",
+              "fr": "Inspire confiance et engagement",
+              "ar": "من يُلهم الثقة والانخراط"
+            },
+            {
+              "en": "Controls everything",
+              "fr": "Contrôle tout",
+              "ar": "من يتحكم في كل شيء"
+            },
+            {
+              "en": "Avoids discussions",
+              "fr": "Évite les discussions",
+              "ar": "من يتجنب النقاشات"
+            }
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": {
+        "en": "Ethics, Professionalism and Adaptability",
+        "fr": "Éthique, professionnalisme et adaptabilité",
+        "ar": "الأخلاقيات، الاحترافية، والقدرة على التكيّف"
+      },
+      "questions": [
+        {
+          "id": "E0",
+          "question": {
+            "en": "A trainer's ethics is expressed through:",
+            "fr": "L'éthique d'un formateur se traduit par :",
+            "ar": "تتجسّد أخلاقيات المكوّن (المدرّب) في ماذا؟"
+          },
+          "options": [
+            {
+              "en": "Rigor and transparency",
+              "fr": "La rigueur et la transparence",
+              "ar": "في الدقة والشفافية"
+            },
+            {
+              "en": "Productivity",
+              "fr": "La productivité",
+              "ar": "في الإنتاجية"
+            },
+            {
+              "en": "Control",
+              "fr": "Le contrôle",
+              "ar": "في السيطرة والتحكم"
+            },
+            {
+              "en": "Obedience",
+              "fr": "L'obéissance",
+              "ar": "في الطاعة"
+            }
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": "E1",
+          "question": {
+            "en": "A colleague asks you to evaluate in their place. You:",
+            "fr": "Un collègue vous demande d'évaluer à sa place. Vous :",
+            "ar": "يطلب منك زميل أن تقوم بالتقييم بدلًا عنه، ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "Accept to help them",
+              "fr": "Acceptez pour l'aider",
+              "ar": "تقبل ذلك لمساعدته"
+            },
+            {
+              "en": "Refuse and inform the coordination",
+              "fr": "Refusez et informez la coordination",
+              "ar": "ترفض وتُبلغ التنسيق"
+            },
+            {
+              "en": "Evaluate discreetly",
+              "fr": "Évaluez discrètement",
+              "ar": "تقوم بالتقييم سرًّا"
+            },
+            {
+              "en": "Don't respond",
+              "fr": "Ne répondez pas",
+              "ar": "لا تردّ عليه"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "E2",
+          "question": {
+            "en": "A supervisor proposes to ease evaluation criteria. You:",
+            "fr": "Un responsable propose d'alléger les critères d'évaluation. Vous :",
+            "ar": "يقترح أحد المسؤولين تخفيف معايير التقييم، ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "Accept to simplify",
+              "fr": "Acceptez pour simplifier",
+              "ar": "تقبل الاقتراح لتبسيط العملية"
+            },
+            {
+              "en": "Refuse and explain the importance of maintaining criteria validity",
+              "fr": "Refusez et expliquez les enjeux de la validité des critères",
+              "ar": "ترفض وتشرح أهمية الحفاظ على مصداقية المعايير"
+            },
+            {
+              "en": "Negotiate a compromise",
+              "fr": "Négociez un compromis",
+              "ar": "تتفاوض على حل وسط"
+            },
+            {
+              "en": "Apply the instruction",
+              "fr": "Appliquez la consigne",
+              "ar": "تطبق التعليمات دون نقاش"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "E3",
+          "question": {
+            "en": "You forgot a criterion in an evaluation grid. You:",
+            "fr": "Vous avez oublié un critère dans une grille. Vous :",
+            "ar": "نسيت معيارًا في شبكة التقييم، ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "Continue without mentioning it",
+              "fr": "Continuez sans le mentionner",
+              "ar": "تواصل عملك دون ذكره"
+            },
+            {
+              "en": "Report it and adjust with transparency",
+              "fr": "Le signalez et ajustez avec transparence",
+              "ar": "تُشير إليه وتُجري التعديل بشفافية"
+            },
+            {
+              "en": "Add it after the session",
+              "fr": "Le rajoutez après la session",
+              "ar": "تضيفه بعد نهاية الجلسة"
+            },
+            {
+              "en": "Ignore it",
+              "fr": "L'ignorez",
+              "ar": "تتجاهله"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "E4",
+          "question": {
+            "en": "Faced with an unforeseen logistical issue:",
+            "fr": "Face à un imprévé logistique :",
+            "ar": "في حالة حدوث ظرف غير متوقع في الجانب اللوجستي:"
+          },
+          "options": [
+            {
+              "en": "You stop the session",
+              "fr": "Vous stoppez la séance",
+              "ar": "توقف الحصة"
+            },
+            {
+              "en": "You stay calm and adapt your means",
+              "fr": "Vous restez calme et adaptez vos moyens",
+              "ar": "تبقى هادئًا وتتكيف مع الوسائل المتاحة"
+            },
+            {
+              "en": "You wait for resolution",
+              "fr": "Vous attendez la résolution",
+              "ar": "تنتظر الحل"
+            },
+            {
+              "en": "You blame the organization",
+              "fr": "Vous blâmez l'organisation",
+              "ar": "تلوم الجهة المنظمة"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "E5",
+          "question": {
+            "en": "Good professional practice consists of:",
+            "fr": "Une bonne pratique professionnelle consiste à :",
+            "ar": "ممارسة مهنية جيدة تتمثل في:"
+          },
+          "options": [
+            {
+              "en": "Copying ready-made sequences",
+              "fr": "Copier des séquences toutes faites",
+              "ar": "نسخ الحصص الجاهزة"
+            },
+            {
+              "en": "Adapting and contextualizing according to learners' needs",
+              "fr": "Adapter et contextualiser selon les besoins des apprenants",
+              "ar": "التكييف والسياق حسب حاجات المتعلمين"
+            },
+            {
+              "en": "Repeating old modules",
+              "fr": "Répéter les anciens modules",
+              "ar": "تكرار الوحدات السابقة"
+            },
+            {
+              "en": "Keeping the same evaluations",
+              "fr": "Garder les mêmes évaluations",
+              "ar": "الاحتفاظ بنفس أدوات التقييم"
+            }
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "title": {
+        "en": "Trainer of Trainers Potential",
+        "fr": "Potentiel de formateur de formateurs",
+        "ar": "إمكانيات المدرب لتدريب المدربين"
+      },
+      "questions": [
+        {
+          "id": "F1",
+          "question": {
+            "en": "You are supporting a new trainer. You:",
+            "fr": "Vous accompagnez un nouveau formateur. Vous :",
+            "ar": "أثناء مرافقتك لمكوّن جديد، ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "Show them how to do it",
+              "fr": "Lui montrez comment faire",
+              "ar": "تُريه كيفية القيام بالأمر"
+            },
+            {
+              "en": "Help them analyze their practices",
+              "fr": "L'aidez à analyser ses pratiques",
+              "ar": "تُساعده على تحليل ممارساته"
+            },
+            {
+              "en": "Evaluate their performance",
+              "fr": "Évaluez sa performance",
+              "ar": "تُقيّم أدائه"
+            },
+            {
+              "en": "Let them experiment alone",
+              "fr": "Le laissez expérimenter seul",
+              "ar": "تتركه يجرب بمفرده"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "F2",
+          "question": {
+            "en": "Training trainers means:",
+            "fr": "Former des formateurs, c'est :",
+            "ar": "تكوين المدربين يعني:"
+          },
+          "options": [
+            {
+              "en": "Explaining methods",
+              "fr": "Expliquer des méthodes",
+              "ar": "شرح الأساليب"
+            },
+            {
+              "en": "Developing reflection and professional stance",
+              "fr": "Développer la réflexion et la posture professionnelle",
+              "ar": "تنمية التفكير والموقف المهني"
+            },
+            {
+              "en": "Transmitting content",
+              "fr": "Transmettre des contenus",
+              "ar": "نقل المحتويات"
+            },
+            {
+              "en": "Supervising sessions",
+              "fr": "Superviser les séances",
+              "ar": "الإشراف على الحصص"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "F3",
+          "question": {
+            "en": "During a pedagogical meeting, you:",
+            "fr": "Lors d'une réunion pédagogique, vous :",
+            "ar": "أثناء اجتماع بيداغوجي، ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "Present your tools",
+              "fr": "Présentez vos outils",
+              "ar": "تعرض أدواتك"
+            },
+            {
+              "en": "Encourage experience sharing",
+              "fr": "Favorisez le partage d'expériences",
+              "ar": "تُشجّع على تبادل الخبرات"
+            },
+            {
+              "en": "Defend your method",
+              "fr": "Défendez votre méthode",
+              "ar": "تدافع عن طريقتك"
+            },
+            {
+              "en": "Stay in the background",
+              "fr": "Restez en retrait",
+              "ar": "تبقى على الهامش"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "F4",
+          "question": {
+            "en": "A colleague makes a mistake during a session. You:",
+            "fr": "Un collègue fait une erreur en séance. Vous :",
+            "ar": "زميل يرتكب خطأً أثناء الحصة، ماذا تفعل؟"
+          },
+          "options": [
+            {
+              "en": "Correct them publicly",
+              "fr": "Le corrigez publiquement",
+              "ar": "تصححه أمام الجميع"
+            },
+            {
+              "en": "Support them",
+              "fr": "L'accompagnez",
+              "ar": "ترافقه وتدعمه لتصحيح الخطأ"
+            },
+            {
+              "en": "Replace them",
+              "fr": "Le remplacez",
+              "ar": "تحل محله"
+            },
+            {
+              "en": "Ignore it",
+              "fr": "L'ignorez",
+              "ar": "تتجاهله"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "F5",
+          "question": {
+            "en": "The role of a trainer of trainers is:",
+            "fr": "Le rôle d'un formateur de formateurs est :",
+            "ar": "دور مدرّب المدربين هو:"
+          },
+          "options": [
+            {
+              "en": "To impose a method",
+              "fr": "D'imposer une méthode",
+              "ar": "فرض طريقة معينة"
+            },
+            {
+              "en": "To help others progress through reflection",
+              "fr": "D'aider les autres à progresser par la réflexion",
+              "ar": "مساعدة الآخرين على التقدم من خلال التفكير والتحليل"
+            },
+            {
+              "en": "To control practices",
+              "fr": "De contrôler les pratiques",
+              "ar": "مراقبة الممارسات"
+            },
+            {
+              "en": "To supervise courses",
+              "fr": "De superviser les cours",
+              "ar": "الإشراف على الدروس"
+            }
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": "F6",
+          "question": {
+            "en": "The sign of an accomplished trainer of trainers:",
+            "fr": "Le signe d'un formateur de formateurs accompli :",
+            "ar": "علامة المدرب الناجح لتدريب المدربين هي:"
+          },
+          "options": [
+            {
+              "en": "They teach a lot",
+              "fr": "Il enseigne beaucoup",
+              "ar": "يدرّس كثيرًا"
+            },
+            {
+              "en": "They develop their peers' competencies",
+              "fr": "Il développe les compétences de ses pairs",
+              "ar": "يطوّر كفاءات زملائه"
+            },
+            {
+              "en": "They talk the most",
+              "fr": "Il parle le plus",
+              "ar": "يتحدث أكثر"
+            },
+            {
+              "en": "They follow instructions",
+              "fr": "Il suit les consignes",
+              "ar": "يتبع التعليمات"
+            }
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    }
+  ]
+}
