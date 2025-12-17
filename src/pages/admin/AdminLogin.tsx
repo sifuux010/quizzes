@@ -62,7 +62,6 @@ const AdminLogin = () => {
               <ShieldCheck className="h-8 w-8 text-primary" />
             </div>
             <CardTitle className="text-2xl">{t("admin.login_title")}</CardTitle>
-            <CardDescription>Demo: admin / admin123</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
