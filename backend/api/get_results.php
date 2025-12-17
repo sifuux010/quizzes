@@ -1,8 +1,6 @@
 <?php
 // backend/api/get_results.php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: https://lightseagreen-alpaca-114967.hostingersite.com/');
-header('Access-Control-Allow-Credentials: true');
+require __DIR__ . '/../cors.php';
 
 require __DIR__ . '/../db.php';
 
@@ -15,6 +13,7 @@ try {
             s.name AS student_name,
             s.email AS student_email,
             s.phone AS student_phone,
+            s.wilaya AS student_wilaya,
             s.password IS NOT NULL AS has_account,
             q.id AS quiz_id,
             q.title AS quiz_title,

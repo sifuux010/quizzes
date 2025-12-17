@@ -1,11 +1,6 @@
 <?php
 // backend/api/get_student_stats.php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: https://lightseagreen-alpaca-114967.hostingersite.com/');
-header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit(0); }
+require __DIR__ . '/../cors.php';
 
 require __DIR__ . '/../db.php';
 
@@ -32,7 +27,7 @@ try {
     }
 
     // Get statistics (only first attempt per quiz counts)
-$statsStmt = $pdo->prepare('
+    $statsStmt = $pdo->prepare('
         SELECT 
             COUNT(*) AS total_completed,
             ROUND(AVG(t.score_percentage), 1) AS avg_score
@@ -47,12 +42,12 @@ $statsStmt = $pdo->prepare('
             ) fa ON qa.quiz_id = fa.quiz_id AND qa.completed_at = fa.first_attempt_time
         ) t
     ');
-$statsStmt->execute([$student['id']]);
-$stats = $statsStmt->fetch(PDO::FETCH_ASSOC);
+    $statsStmt->execute([$student['id']]);
+    $stats = $statsStmt->fetch(PDO::FETCH_ASSOC);
 
     echo json_encode([
-        'totalCompleted' => (int)$stats['total_completed'],
-        'avgScore' => (float)($stats['avg_score'] ?? 0)
+        'totalCompleted' => (int) $stats['total_completed'],
+        'avgScore' => (float) ($stats['avg_score'] ?? 0)
     ]);
 
 } catch (Exception $e) {

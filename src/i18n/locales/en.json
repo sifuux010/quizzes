@@ -8,11 +8,10 @@
     "admin": "Admin",
     "student": "Student"
   },
-  
   "landing": {
     "ministry_badge": "ministry of vocational training and education",
     "hero_title": "Assess your trainer readiness",
-    "hero_subtitle": "Take two quick diagnostics: Trainer Potential and CBA Knowledge (Competency-Based Approach), designed for vocational training educators.",
+    "hero_subtitle": "Take a trainer potential assessment, designed for vocational training instructors.",
     "cta_button": "Start the assessment",
     "cta_button_short": "Get Started",
     "stats_students": "Students Enrolled",
@@ -33,15 +32,15 @@
     "process_badge": "3 simple steps",
     "how_it_works": "How it works",
     "process_subtitle": "Complete your diagnostics in minutes and receive an immediate report.",
-    "step1_title": "Choose a quiz",
-    "step1_desc": "Start with Trainer Potential or CBA Knowledge.",
-    "step2_title": "Take the assessment",
-    "step2_desc": "Answer targeted questions tailored for trainers.",
-    "step3_title": "View your report",
-    "step3_desc": "See your strengths and areas to improve.",
-    "cta_title": "Ready to measure your readiness?",
-    "cta_subtitle": "Begin now and receive an instant, shareable report.",
-    "cta_button_alt": "Take the quizzes",
+    "step1_title": "Click 'Start Assessment'",
+    "step1_desc": "Click the button to begin your evaluation journey.",
+    "step2_title": "Answer Questions",
+    "step2_desc": "Complete the questions tailored for your profile.",
+    "step3_title": "Click 'Submit'",
+    "step3_desc": "Submit your answers to complete the assessment.",
+    "cta_title": "Ready for the challenge?",
+    "cta_subtitle": "Test your knowledge and prove your skills in this unique challenge.",
+    "cta_button_alt": "Start the challenge",
     "footer_ministry": "Ministry of Vocational Training and Education",
     "footer_copyright": "© 2025 All rights reserved. Contact us for more information.",
     "footer_contact": "Contact: info@quizmaster.com"
@@ -81,7 +80,11 @@
     "selectAnswer": "Select your answer",
     "confirmSubmit": "Confirm Submit",
     "unansweredWarning": "You have unanswered questions. Please answer all questions before submitting.",
-    "pleaseSelectAnswer": "Please select an answer before moving to the next question."
+    "pleaseSelectAnswer": "Please select an answer before moving to the next question.",
+    "time_over_title": "Time's Up!",
+    "time_over_desc": "The time allotted for the quiz has run out. You cannot answer any more questions. Please submit your quiz now.",
+    "submitted_title": "Submitted Successfully",
+    "submitted_desc": "Your quiz is submitted successfully and you will get your result soon."
   },
   "common": {
     "student": "Student",
@@ -190,8 +193,4 @@
     "average": "Average",
     "needs_work": "Needs Improvement"
   }
-
-  
- 
-  
 }

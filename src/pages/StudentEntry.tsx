@@ -5,6 +5,13 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navbar } from "@/components/Navbar";
@@ -14,21 +21,22 @@ import { Eye, EyeOff, UserPlus, LogIn } from "lucide-react";
 const StudentEntry = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  
+
   // Form states
   const [loginData, setLoginData] = useState({
     email: "",
     password: ""
   });
-  
+
   const [signupData, setSignupData] = useState({
     name: "",
     email: "",
     phone: "",
+    wilaya: "",
     password: "",
     confirmPassword: ""
   });
-  
+
   const [showLoginPassword, setShowLoginPassword] = useState(false);
   const [showSignupPassword, setShowSignupPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -37,27 +45,31 @@ const StudentEntry = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     try {
-      const response = await fetch('https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/student_login.php', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/student_login.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(loginData),
       });
-      
+
       const result = await response.json();
-      
+
       if (result.success) {
         // Store student info in localStorage
         localStorage.setItem("studentId", result.student.id);
         localStorage.setItem("studentName", result.student.name);
         localStorage.setItem("studentEmail", result.student.email);
         localStorage.setItem("studentPhone", result.student.phone || "");
-        
+
         toast.success(`${t('auth.welcome_back')}, ${result.student.name}!`);
-        navigate("/quizzes");
+
+
+        const searchParams = new URLSearchParams(window.location.search);
+        const redirectUrl = searchParams.get('redirect');
+        navigate(redirectUrl || "/");
       } else {
         toast.error(result.error || t('auth.login_failed'));
       }
@@ -70,21 +82,21 @@ const StudentEntry = () => {
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (signupData.password !== signupData.confirmPassword) {
       toast.error(t('auth.password_mismatch'));
       return;
     }
-    
+
     if (signupData.password.length < 6) {
       toast.error(t('auth.password_too_short'));
       return;
     }
-    
+
     setIsLoading(true);
-    
+
     try {
-      const response = await fetch('https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/student_signup.php', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/student_signup.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -93,21 +105,26 @@ const StudentEntry = () => {
           name: signupData.name,
           email: signupData.email,
           phone: signupData.phone,
+          wilaya: signupData.wilaya,
           password: signupData.password
         }),
       });
-      
+
       const result = await response.json();
-      
+
       if (result.success) {
         // Store student info in localStorage
         localStorage.setItem("studentId", result.student.id);
         localStorage.setItem("studentName", result.student.name);
         localStorage.setItem("studentEmail", result.student.email);
         localStorage.setItem("studentPhone", result.student.phone || "");
-        
+
         toast.success(`${t('auth.welcome')}, ${result.student.name}!`);
-        navigate("/quizzes");
+
+
+        const searchParams = new URLSearchParams(window.location.search);
+        const redirectUrl = searchParams.get('redirect');
+        navigate(redirectUrl || "/");
       } else {
         toast.error(result.error || t('auth.signup_failed'));
       }
@@ -118,12 +135,12 @@ const StudentEntry = () => {
     }
   };
 
- 
+
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-primary/5 to-background">
       <Navbar />
-      
+
       <div className="flex-1 flex items-center justify-center px-4 py-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -134,7 +151,7 @@ const StudentEntry = () => {
           <Card className="border-2">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">{t("student.title")}</CardTitle>
-             
+
             </CardHeader>
             <CardContent>
               <Tabs defaultValue="login" className="w-full">
@@ -148,7 +165,7 @@ const StudentEntry = () => {
                     {t('auth.signup')}
                   </TabsTrigger>
                 </TabsList>
-                
+
                 <TabsContent value="login" className="space-y-4 mt-6">
                   <form onSubmit={handleLogin} className="space-y-4">
                     <div className="space-y-2">
@@ -158,7 +175,7 @@ const StudentEntry = () => {
                         type="email"
                         placeholder={t("auth.email_placeholder")}
                         value={loginData.email}
-                        onChange={(e) => setLoginData({...loginData, email: e.target.value})}
+                        onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
                         required
                       />
                     </div>
@@ -171,7 +188,7 @@ const StudentEntry = () => {
                           type={showLoginPassword ? "text" : "password"}
                           placeholder={t("auth.password_placeholder")}
                           value={loginData.password}
-                          onChange={(e) => setLoginData({...loginData, password: e.target.value})}
+                          onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
                           required
                         />
                         <Button
@@ -195,7 +212,7 @@ const StudentEntry = () => {
                     </Button>
                   </form>
                 </TabsContent>
-                
+
                 <TabsContent value="signup" className="space-y-4 mt-6">
                   <form onSubmit={handleSignup} className="space-y-4">
                     <div className="space-y-2">
@@ -205,7 +222,7 @@ const StudentEntry = () => {
                         type="text"
                         placeholder={t("auth.name_placeholder")}
                         value={signupData.name}
-                        onChange={(e) => setSignupData({...signupData, name: e.target.value})}
+                        onChange={(e) => setSignupData({ ...signupData, name: e.target.value })}
                         required
                       />
                     </div>
@@ -217,9 +234,26 @@ const StudentEntry = () => {
                         type="email"
                         placeholder={t("auth.email_placeholder")}
                         value={signupData.email}
-                        onChange={(e) => setSignupData({...signupData, email: e.target.value})}
+                        onChange={(e) => setSignupData({ ...signupData, email: e.target.value })}
                         required
                       />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="signup-wilaya">Wilaya</Label>
+                      <Select
+                        onValueChange={(value) => setSignupData({ ...signupData, wilaya: value })}
+                        value={signupData.wilaya}
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select Wilaya" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Alger">Alger</SelectItem>
+                          <SelectItem value="Oran">Oran</SelectItem>
+                          <SelectItem value="Constantine">Constantine</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
 
                     <div className="space-y-2">
@@ -229,7 +263,7 @@ const StudentEntry = () => {
                         type="tel"
                         placeholder={t("auth.phone_placeholder")}
                         value={signupData.phone}
-                        onChange={(e) => setSignupData({...signupData, phone: e.target.value})}
+                        onChange={(e) => setSignupData({ ...signupData, phone: e.target.value })}
                       />
                     </div>
 
@@ -241,7 +275,7 @@ const StudentEntry = () => {
                           type={showSignupPassword ? "text" : "password"}
                           placeholder={t("auth.password_placeholder")}
                           value={signupData.password}
-                          onChange={(e) => setSignupData({...signupData, password: e.target.value})}
+                          onChange={(e) => setSignupData({ ...signupData, password: e.target.value })}
                           required
                         />
                         <Button
@@ -268,7 +302,7 @@ const StudentEntry = () => {
                           type={showConfirmPassword ? "text" : "password"}
                           placeholder={t("auth.confirm_password_placeholder")}
                           value={signupData.confirmPassword}
-                          onChange={(e) => setSignupData({...signupData, confirmPassword: e.target.value})}
+                          onChange={(e) => setSignupData({ ...signupData, confirmPassword: e.target.value })}
                           required
                         />
                         <Button
@@ -293,7 +327,7 @@ const StudentEntry = () => {
                   </form>
                 </TabsContent>
               </Tabs>
-              
+
               {/* Quick Start removed */}
             </CardContent>
           </Card>

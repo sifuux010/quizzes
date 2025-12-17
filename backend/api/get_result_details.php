@@ -1,9 +1,6 @@
 <?php
 // backend/api/get_result_details.php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin:https://lightseagreen-alpaca-114967.hostingersite.com/');
-header('Access-Control-Allow-Credentials: true');
-
+require __DIR__ . '/../cors.php';
 require __DIR__ . '/../db.php';
 
 // ✅ Enable PHP error reporting for debugging

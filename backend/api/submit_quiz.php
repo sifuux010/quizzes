@@ -1,9 +1,6 @@
 <?php
 // backend/api/submit_quiz.php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: https://lightseagreen-alpaca-114967.hostingersite.com/');
-header('Access-Control-Allow-Headers: Content-Type');
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit(0); }
+require __DIR__ . '/../cors.php';
 
 require __DIR__ . '/../db.php';
 
@@ -26,9 +23,15 @@ try {
 
     if ($student) {
         $studentId = $student['id'];
+        // Optional: Update wilaya if empty? Let's skip for now to keep it simple.
     } else {
-        $insertStudentStmt = $pdo->prepare('INSERT INTO students (name, email, phone) VALUES (?, ?, ?)');
-        $insertStudentStmt->execute([$data['student']['name'], $data['student']['email'], $data['student']['phone']]);
+        $insertStmt = $pdo->prepare('INSERT INTO students (name, email, phone, wilaya) VALUES (?, ?, ?, ?)');
+        $insertStmt->execute([
+            $data['student']['name'],
+            $data['student']['email'],
+            $data['student']['phone'],
+            $data['student']['wilaya'] ?? null
+        ]);
         $studentId = $pdo->lastInsertId();
     }
 
@@ -44,7 +47,7 @@ try {
             'ok' => true,
             'alreadyAttempted' => true,
             'attemptId' => $existing['id'],
-            'percentage' => round((float)$existing['score_percentage']),
+            'percentage' => round((float) $existing['score_percentage']),
         ]);
         exit;
     }
@@ -80,9 +83,24 @@ try {
 
     $pdo->commit();
 
+    // 6. Send Email Notification
+    $to = $data['student']['email'];
+    $subject = "Quiz Submission Confirmation";
+    $message = "Dear " . $data['student']['name'] . ",\n\n" .
+        "Thank you for completing the Professional Assessment Test.\n\n" .
+        "We have received your submission successfully. Our team will review your results and get back to you shortly.\n\n" .
+        "Best regards,\nMinistry of Vocational Training and Education";
+
+    $headers = "From: no-reply@quizmaster.com\r\n" .
+        "Reply-To: contact@quizmaster.com\r\n" .
+        "X-Mailer: PHP/" . phpversion();
+
+    // Suppress warnings for local env without SMTP
+    @mail($to, $subject, $message, $headers);
+
     echo json_encode([
-        'ok' => true, 
-        'attemptId' => $attemptId, 
+        'ok' => true,
+        'attemptId' => $attemptId,
         'score' => $score,
         'total' => $totalQuestions,
         'percentage' => round($percentage)

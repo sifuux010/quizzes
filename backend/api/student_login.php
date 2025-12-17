@@ -1,12 +1,6 @@
 <?php
 // backend/api/student_login.php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: https://lightseagreen-alpaca-114967.hostingersite.com/');
-header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: Content-Type');
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit(0); }
+require __DIR__ . '/../cors.php';
 
 require __DIR__ . '/../db.php';
 
@@ -29,7 +23,7 @@ try {
     if ($student && password_verify($password, $student['password'])) {
         // Remove password from response
         unset($student['password']);
-        
+
         http_response_code(200);
         echo json_encode([
             'success' => true,

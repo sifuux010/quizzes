@@ -25,7 +25,7 @@ const StudentsPage = () => {
   useEffect(() => {
     const fetchQuizzes = async () => {
       try {
-        const response = await fetch('https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/get_quizzes.php');
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/get_quizzes.php`);
         const data = await response.json();
         setAvailableQuizzes(data);
       } catch (error) {
@@ -39,7 +39,7 @@ const StudentsPage = () => {
     const fetchStudents = async () => {
       setIsLoading(true);
       try {
-        const url = `https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/get_students.php?quiz_id=${quizFilter}`;
+        const url = `${import.meta.env.VITE_API_BASE_URL}/backend/api/get_students.php?quiz_id=${quizFilter}`;
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error('Failed to fetch students');
@@ -208,11 +208,10 @@ const StudentsPage = () => {
                         {student.email || '-'}
                       </TableCell>
                       <TableCell>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          student.has_account 
-                            ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' 
-                            : 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200'
-                        }`}>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${student.has_account
+                          ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                          : 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200'
+                          }`}>
                           {student.has_account ? t('admin.registered') : t('admin.guest')}
                         </span>
                       </TableCell>

@@ -11,7 +11,7 @@
   "landing": {
     "ministry_badge": "Ministère de la Formation et de l'Enseignement Professionnels",
     "hero_title": "Renforcez votre avenir avec une formation de qualité",
-    "hero_subtitle": "Passez deux diagnostics rapides : Potentiel de formateur et Connaissances APC (Approche par Compétences), conçus pour les formateurs de la formation professionnelle.",
+    "hero_subtitle": "Passez un diagnostic de potentiel de formateur, conçu pour les formateurs de la formation professionnelle.",
     "cta_button": "Commencez l'évaluation",
     "cta_button_short": "Commencer",
     "stats_students": "Étudiants inscrits",
@@ -32,15 +32,15 @@
     "process_badge": "Processus simple",
     "how_it_works": "Comment ça marche",
     "process_subtitle": "Commencez votre parcours de formation professionnelle en trois étapes simples",
-    "step1_title": "Choisissez un quiz",
-    "step1_desc": "Commencez par Potentiel de formateur ou Connaissances APC.",
-    "step2_title": "Complétez l'évaluation",
-    "step2_desc": "Passez des évaluations pour valider vos compétences et connaissances",
-    "step3_title": "Obtenez votre certificat",
-    "step3_desc": "Recevez une certification officielle après avoir terminé avec succès",
-    "cta_title": "Prêt à commencer votre parcours ?",
-    "cta_subtitle": "Rejoignez des milliers d'étudiants qui font progresser leur carrière grâce à une formation professionnelle de qualité",
-    "cta_button_alt": "Commencez votre formation",
+    "step1_title": "Cliquez sur 'Commencer'",
+    "step1_desc": "Cliquez sur le bouton pour débuter votre évaluation.",
+    "step2_title": "Répondez aux questions",
+    "step2_desc": "Complétez les questions adaptées à votre profil.",
+    "step3_title": "Cliquez sur 'Soumettre'",
+    "step3_desc": "Soumettez vos réponses pour terminer l'évaluation.",
+    "cta_title": "Prêt à relever le défi ?",
+    "cta_subtitle": "Testez vos connaissances et prouvez vos compétences dans ce challenge unique.",
+    "cta_button_alt": "Commencer le challenge",
     "footer_ministry": "Ministère de la Formation et de l'Enseignement Professionnels",
     "footer_copyright": "© 2025 Tous droits réservés. Contactez-nous pour plus d'informations.",
     "footer_contact": "Contact : info@quizmaster.com"
@@ -80,7 +80,11 @@
     "selectAnswer": "Sélectionnez votre réponse",
     "confirmSubmit": "Confirmer la soumission",
     "unansweredWarning": "Vous avez des questions sans réponse. Veuillez répondre à toutes les questions avant de soumettre.",
-    "pleaseSelectAnswer": "Veuillez sélectionner une réponse avant de passer à la question suivante."
+    "pleaseSelectAnswer": "Veuillez sélectionner une réponse avant de passer à la question suivante.",
+    "time_over_title": "Temps écoulé !",
+    "time_over_desc": "Le temps imparti pour le quiz est écoulé. Vous ne pouvez plus répondre aux questions. Veuillez soumettre votre quiz maintenant.",
+    "submitted_title": "Soumis avec succès",
+    "submitted_desc": "Votre quiz a été soumis avec succès et vous recevrez bientôt votre résultat."
   },
   "quizList": {
     "title": "Quiz disponibles",
@@ -101,8 +105,7 @@
     "helloName": "Bonjour, {{name}} !",
     "todayMessage": "Aujourd'hui, vous avez 2 quiz disponibles. Êtes-vous prêt à tester vos connaissances et améliorer vos compétences ?",
     "startNow": "Commencer maintenant"
-},
-  
+  },
   "student": {
     "title": "Entrez vos informations",
     "subtitle": "Commencez votre parcours de quiz",
@@ -173,7 +176,6 @@
     "attempt_by": "Tentative par",
     "on": "le"
   },
-  
   "common": {
     "loading": "Chargement...",
     "error": "Une erreur s'est produite",

@@ -10,6 +10,14 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Clock, CheckCircle2, AlertCircle, ChevronRight, ChevronLeft, Flag } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { LanguageToggle } from "@/components/LanguageToggle";
 
 const Quiz = () => {
@@ -23,25 +31,27 @@ const Quiz = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
-  const [timeLeft, setTimeLeft] = useState(600);
+  const [timeLeft, setTimeLeft] = useState(1800);
+  const [isTimeOver, setIsTimeOver] = useState(false);
   const [startTime, setStartTime] = useState(Date.now());
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [direction, setDirection] = useState(0);
 
   useEffect(() => {
     const fetchQuiz = async () => {
       if (!quizId) {
-        navigate('/quizzes');
+        navigate('/');
         return;
       }
       try {
-        const response = await fetch(`https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/get_quiz.php?id=${quizId}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/get_quiz.php?id=${quizId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch quiz data');
         }
         const data = await response.json();
         setQuiz(data);
-        setTimeLeft(data.duration || 600);
+        setTimeLeft(1800); // Enforce 30 minutes 
       } catch (err: any) {
         setError(err.message);
       } finally {
@@ -59,7 +69,7 @@ const Quiz = () => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          handleSubmit();
+          setIsTimeOver(true);
           return 0;
         }
         return prev - 1;
@@ -93,7 +103,7 @@ const Quiz = () => {
     };
 
     try {
-      const response = await fetch('https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/submit_quiz.php', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/submit_quiz.php`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(submissionData),
@@ -104,14 +114,7 @@ const Quiz = () => {
       }
 
       const result = await response.json();
-      if (result.alreadyAttempted) {
-        const totalQ = quiz.questions.length;
-        const inferredScore = Math.round(((result.percentage || 0) / 100) * totalQ);
-        navigate("/results", { state: { ...result, score: inferredScore, total: totalQ, quizName: quiz.title[currentLang] } });
-      } else {
-        result.quizName = quiz.title[currentLang];
-        navigate("/results", { state: result });
-      }
+      setShowSuccessDialog(true);
 
     } catch (err) {
       console.error(err);
@@ -202,7 +205,7 @@ const Quiz = () => {
       <div className="hidden sm:block">
         <Navbar />
       </div>
-      
+
       <div className="flex-1 flex flex-col">
         {/* Mobile: Minimal top bar with circular progress and timer */}
         <div className="sm:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 px-4 py-3">
@@ -237,17 +240,16 @@ const Quiz = () => {
               </div>
             </div>
 
-           <div className="flex items-center gap-2">
-            <LanguageToggle />
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm transition-colors ${
-              timeLeft < 60 ? "bg-red-100 text-red-700" : 
-              timeLeft < 180 ? "bg-orange-100 text-orange-700" : 
-              "bg-blue-100 text-blue-700"
-            }`}>
-              <Clock className="h-4 w-4" />
-              <span>{formatTime(timeLeft)}</span>
+            <div className="flex items-center gap-2">
+              <LanguageToggle />
+              <div className={`flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm transition-colors ${timeLeft < 60 ? "bg-red-100 text-red-700" :
+                timeLeft < 180 ? "bg-orange-100 text-orange-700" :
+                  "bg-blue-100 text-blue-700"
+                }`}>
+                <Clock className="h-4 w-4" />
+                <span>{formatTime(timeLeft)}</span>
+              </div>
             </div>
-          </div>
           </div>
         </div>
 
@@ -263,7 +265,7 @@ const Quiz = () => {
                 <CardContent className="p-4">
                   <div className="flex flex-col gap-3">
                     <h1 className="text-xl md:text-2xl font-bold text-gray-900">{quiz.title[currentLang]}</h1>
-                    
+
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-3 text-sm text-gray-600">
                         <span className="flex items-center gap-1">
@@ -275,12 +277,11 @@ const Quiz = () => {
                           {getUnansweredCount()} {t("quiz.remaining") || "remaining"}
                         </span>
                       </div>
-                      
-                      <div className={`flex items-center gap-2 px-3 py-2 rounded-md font-bold transition-colors ${
-                        timeLeft < 60 ? "bg-red-100 text-red-700" : 
-                        timeLeft < 180 ? "bg-orange-100 text-orange-700" : 
-                        "bg-blue-100 text-blue-700"
-                      }`}>
+
+                      <div className={`flex items-center gap-2 px-3 py-2 rounded-md font-bold transition-colors ${timeLeft < 60 ? "bg-red-100 text-red-700" :
+                        timeLeft < 180 ? "bg-orange-100 text-orange-700" :
+                          "bg-blue-100 text-blue-700"
+                        }`}>
                         <Clock className="h-4 w-4" />
                         <span>{formatTime(timeLeft)}</span>
                       </div>
@@ -354,18 +355,16 @@ const Quiz = () => {
                           >
                             <Label
                               htmlFor={`option-${index}`}
-                              className={`flex items-center gap-3 border-2 rounded-xl p-4 py-5 transition-all cursor-pointer group min-h-[70px] sm:min-h-[80px] ${
-                                isSelected
-                                  ? "border-cyan-500 bg-cyan-50 shadow-md ring-1 ring-cyan-300"
-                                  : "border-gray-200 hover:border-cyan-300 hover:bg-gray-50"
-                              }`}
+                              className={`flex items-center gap-3 border-2 rounded-xl p-4 py-5 transition-all cursor-pointer group min-h-[70px] sm:min-h-[80px] ${isSelected
+                                ? "border-cyan-500 bg-cyan-50 shadow-md ring-1 ring-cyan-300"
+                                : "border-gray-200 hover:border-cyan-300 hover:bg-gray-50"
+                                }`}
                             >
                               <div
-                                className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm transition-colors ${
-                                  isSelected
-                                    ? "bg-cyan-500 text-white shadow-sm"
-                                    : "bg-gray-100 text-gray-600 group-hover:bg-cyan-50 group-hover:text-cyan-600"
-                                }`}
+                                className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm transition-colors ${isSelected
+                                  ? "bg-cyan-500 text-white shadow-sm"
+                                  : "bg-gray-100 text-gray-600 group-hover:bg-cyan-50 group-hover:text-cyan-600"
+                                  }`}
                               >
                                 {optionLetter}
                               </div>
@@ -381,7 +380,7 @@ const Quiz = () => {
                               </span>
                             </Label>
                           </motion.div>
-                          
+
                         );
                       })}
                     </RadioGroup>
@@ -406,7 +405,7 @@ const Quiz = () => {
 
                       {/* Next or Submit */}
                       {isLastQuestion ? (
-                        <Button 
+                        <Button
                           size="lg"
                           onClick={() => setShowSubmitConfirm(true)}
                           className="flex-1 font-semibold rounded-xl h-12 bg-cyan-500 hover:bg-cyan-600 text-white shadow-lg"
@@ -416,7 +415,7 @@ const Quiz = () => {
                           <Flag className="h-5 w-5 sm:ml-1" />
                         </Button>
                       ) : (
-                        <Button 
+                        <Button
                           size="lg"
                           onClick={handleNextQuestion}
                           disabled={!isAnswered}
@@ -429,7 +428,7 @@ const Quiz = () => {
                     </div>
                   ) : (
                     <div className="space-y-2">
-                      <Button 
+                      <Button
                         size="lg"
                         onClick={handleSubmit}
                         className="w-full bg-green-600 hover:bg-green-700 font-semibold rounded-xl h-12"
@@ -437,7 +436,7 @@ const Quiz = () => {
                         {t("quiz.confirmSubmit") || "Confirm Submit"}
                       </Button>
 
-                      <Button 
+                      <Button
                         variant="outline"
                         size="lg"
                         onClick={() => setShowSubmitConfirm(false)}
@@ -470,7 +469,48 @@ const Quiz = () => {
           </motion.div>
         )}
       </div>
-    </div>
+
+      {/* Time Over Alert Dialog */}
+      <AlertDialog open={isTimeOver}>
+        <AlertDialogContent onEscapeKeyDown={(e) => e.preventDefault()} onPointerDownOutside={(e) => e.preventDefault()}>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="flex items-center gap-2 text-red-600">
+              <Clock className="h-5 w-5" />
+              {t("quiz.time_over_title")}
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              {t("quiz.time_over_desc")}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <Button onClick={handleSubmit} className="w-full bg-cyan-600 hover:bg-cyan-700 text-white">
+              {t("quiz.submit")}
+            </Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+
+      </AlertDialog>
+
+      {/* Success Dialog */}
+      <AlertDialog open={showSuccessDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="flex items-center gap-2 text-green-600">
+              <CheckCircle2 className="h-5 w-5" />
+              {t("quiz.submitted_title")}
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              {t("quiz.submitted_desc")}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <Button onClick={() => navigate('/')} className="w-full bg-green-600 hover:bg-green-700 text-white">
+              {t("common.ok") || "OK"}
+            </Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </div >
   );
 };
 

@@ -18,12 +18,12 @@ const AdminLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = async (e: React.FormEvent) => { 
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/login.php', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/login.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

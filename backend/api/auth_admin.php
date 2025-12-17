@@ -10,9 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: https://lightseagreen-alpaca-114967.hostingersite.com/');
-header('Access-Control-Allow-Credentials: true');
+require __DIR__ . '/../cors.php';
 
 // Simple session-based admin check
 if (!isset($_SESSION['admin_id'])) {

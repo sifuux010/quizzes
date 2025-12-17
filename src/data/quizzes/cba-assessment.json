@@ -1,11 +1,10 @@
 {
   "id": "cba_trainer_potential",
-"title": {
-  "en": "Trainer Potential Quiz",
-  "fr": "Quiz Potentiel Formateur",
-  "ar": "اختبار قابلية أن تكون مُكوِّنًا"
-}
-,
+  "title": {
+    "en": "Trainer Potential Quiz",
+    "fr": "Quiz Potentiel Formateur",
+    "ar": "اختبار قابلية أن تكون مُكوِّنًا"
+  },
   "description": {
     "en": "Assessment of psycho-pedagogical, strategic, and behavioral potential - evaluating professional posture, educational maturity, systemic thinking capacity, and pedagogical leadership",
     "fr": "Évaluation du potentiel psychopédagogique, stratégique et comportemental - posture professionnelle, maturité éducative, capacité de réflexion systémique et leadership pédagogique",
@@ -1011,7 +1010,7 @@
           "options": [
             {
               "en": "You remain calm and adapt",
-              "fr": "Vous restez calme et adaptez",
+              "fr": "Vous restez calme et vous vous adaptez",
               "ar": "تبقى هادئاً وتتكيف"
             },
             {
@@ -1170,8 +1169,8 @@
           "id": "F4",
           "question": {
             "en": "A beginner trainer makes a mistake in session. You:",
-            "fr": "Un formateur débutant se trompe en séance. Vous :",
-            "ar": "مكوّن مبتدئ يخطئ في الجلسة. أنت:"
+            "fr": "Un formateur débutant fait une erreur lors de la séance. Vous :",
+            "ar": "مدرب مبتدئ يرتكب خطأً أثناء الجلسة. أنت:"
           },
           "options": [
             {
@@ -1180,9 +1179,9 @@
               "ar": "تصححه علناً"
             },
             {
-              "en": "Analyze the situation with them afterward",
-              "fr": "Analysez ensuite la situation avec lui",
-              "ar": "تحلل الموقف معه لاحقاً"
+              "en": "Review the questions with him afterward",
+              "fr": "Réviser avec lui les questions du contenu",
+              "ar": "مراجعة الأسئلة معه لاحقاً"
             },
             {
               "en": "Replace them",

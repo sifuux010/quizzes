@@ -19,7 +19,7 @@ const ResultDetailsPage = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await fetch(`https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/get_result_details.php?id=${attemptId}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/get_result_details.php?id=${attemptId}`);
         const data = await response.json();
 
         if (!response.ok) throw new Error(data.error || 'Failed to fetch result details');
@@ -102,13 +102,12 @@ const ResultDetailsPage = () => {
                 return (
                   <div
                     key={i}
-                    className={`p-3 rounded-lg border transition-all duration-150 ${
-                      isCorrect
-                        ? 'bg-green-100 border-green-400'
-                        : isSelected
+                    className={`p-3 rounded-lg border transition-all duration-150 ${isCorrect
+                      ? 'bg-green-100 border-green-400'
+                      : isSelected
                         ? 'bg-red-100 border-red-400'
                         : 'bg-white border-gray-200'
-                    }`}
+                      }`}
                   >
                     {getText(option)}
                   </div>
@@ -119,12 +118,7 @@ const ResultDetailsPage = () => {
         ))}
       </div>
 
-      {/* Optional debug section */}
-      {debug && (
-        <pre className="mt-10 p-4 text-xs bg-gray-50 border border-gray-200 rounded-md overflow-auto">
-          {JSON.stringify(debug, null, 2)}
-        </pre>
-      )}
+
     </motion.div>
   );
 };

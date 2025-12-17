@@ -1,13 +1,7 @@
 <?php
 // backend/api/login.php
 header('Content-Type: application/json');
-
-// Adjust this to match your production frontend origin
-$origin = 'https://lightseagreen-alpaca-114967.hostingersite.com/';
-header('Access-Control-Allow-Origin: ' . $origin);
-header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Headers: Content-Type');
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit(0); }
+require __DIR__ . '/../cors.php';
 
 require __DIR__ . '/../db.php';
 session_start();

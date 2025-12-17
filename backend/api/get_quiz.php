@@ -1,11 +1,8 @@
 <?php
 // backend/api/get_quiz.php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin:https://lightseagreen-alpaca-114967.hostingersite.com/');
-header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit(0); }
+require __DIR__ . '/../cors.php';
+
+
 
 require __DIR__ . '/../db.php';
 
@@ -51,3 +48,5 @@ try {
     http_response_code(500);
     echo json_encode(['error' => 'Failed to fetch quiz: ' . $e->getMessage()]);
 }
+
+

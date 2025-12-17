@@ -1,9 +1,9 @@
 <?php
 // backend/db.php
-$DB_HOST = 'mysql.hostinger.com';
-$DB_NAME = 'u204363910_quize';
-$DB_USER = 'u204363910_sifesalah366';
-$DB_PASS = 'AdamMoh10&';
+$DB_HOST = 'localhost';
+$DB_NAME = 'quizdb';
+$DB_USER = 'root';
+$DB_PASS = '';
 
 $dsn = "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4";
 $options = [

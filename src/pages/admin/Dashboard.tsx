@@ -15,7 +15,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch('https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/get_dashboard_stats.php');
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/get_dashboard_stats.php`);
         console.log('[Dashboard] GET /get_dashboard_stats.php status', response.status, response.headers.get('content-type'));
         const raw = await response.clone().text();
         console.log('[Dashboard] raw response (first 500 chars):', raw.slice(0, 500));
@@ -95,7 +95,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-6">
-     
+
 
       {/* Stats Grid */}
       <div className="grid gap-6 md:grid-cols-3 mb-6">
@@ -292,12 +292,11 @@ const Dashboard = () => {
                 {stats.top_students.slice(0, 5).map((student: any, index: number) => (
                   <div key={student.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors">
                     <div className="flex items-center gap-4">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
-                        index === 0 ? 'bg-yellow-100 text-yellow-700' :
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${index === 0 ? 'bg-yellow-100 text-yellow-700' :
                         index === 1 ? 'bg-gray-100 text-gray-700' :
-                        index === 2 ? 'bg-orange-100 text-orange-700' :
-                        'bg-indigo-50 text-indigo-600'
-                      }`}>
+                          index === 2 ? 'bg-orange-100 text-orange-700' :
+                            'bg-indigo-50 text-indigo-600'
+                        }`}>
                         {index + 1}
                       </div>
                       <div>

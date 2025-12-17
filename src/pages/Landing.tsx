@@ -20,10 +20,10 @@ const Landing = () => {
   const lastTwoWords = titleParts.slice(-2).join(" ");
   const isRTL = i18n.language?.startsWith("ar");
 
- 
- 
 
-  
+
+
+
 
   const steps = [
     {
@@ -63,17 +63,17 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-cyan-50">
-      
+
       <Navbar />
-      
-     {/* Hero Section */}
+
+      {/* Hero Section */}
       <section
         id="home"
         className="flex-1 mt-4 flex items-center justify-center px-4 pt-0 pb-16 md:pb-24 relative overflow-hidden bg-white"
       >
         <div className="container max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             {/* Left side content */}
             <div className="space-y-8">
               <div className="inline-flex items-center gap-4 bg-cyan-500/10 text-cyan-700 pl-4 pr-5 py-2.5 rounded-full text-sm font-medium">
@@ -91,16 +91,16 @@ const Landing = () => {
                       {" "}
                       <span className="relative inline-block">
                         <span className="relative z-10 text-[#FDD240]">{lastTwoWords.split(' ')[1]}</span>
-                        <svg 
-                          className="absolute left-0 w-full -bottom-2" 
+                        <svg
+                          className="absolute left-0 w-full -bottom-2"
                           height="12"
-                          viewBox="0 0 200 12" 
+                          viewBox="0 0 200 12"
                           preserveAspectRatio="none"
                         >
-                          <path 
-                            d="M0,7 Q50,2 100,7 T200,7" 
+                          <path
+                            d="M0,7 Q50,2 100,7 T200,7"
                             fill="none"
-                            stroke="#FDD240" 
+                            stroke="#FDD240"
                             strokeWidth="3"
                             strokeLinecap="round"
                           />
@@ -118,37 +118,25 @@ const Landing = () => {
                 <Button
                   size="lg"
                   className="group relative bg-cyan-500 hover:bg-cyan-600 text-white h-14 px-8 text-base md:text-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-0.5"
-                  onClick={() => (window.location.href = "/student-entry")}
+                  onClick={() => {
+                    const isLoggedIn = localStorage.getItem("studentId");
+                    if (isLoggedIn) {
+                      window.location.href = "/quiz/cba_trainer_potential";
+                    } else {
+                      window.location.href = "/student-entry?redirect=/quiz/cba_trainer_potential";
+                    }
+                  }}
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <span className="hidden sm:inline">{t("landing.cta_button")}</span>
                     <span className="sm:hidden">{t("landing.cta_button_short")}</span>
-                    <svg 
-                      className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
-                      fill="none" 
-                      stroke="currentColor" 
+                    <svg
+                      className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </span>
-                </Button>
-                
-                <Button
-                  size="lg"
-                  className="group relative bg-white border-2 border-slate-200 hover:border-cyan-500 text-slate-700 hover:text-cyan-600 h-14 px-8 text-base md:text-lg rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                  onClick={() => (window.location.href = "/about")}
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    <span className="hidden sm:inline">{t("landing.cta_learn_more")}</span>
-                    <span className="sm:hidden">{t("landing.cta_learn")}</span>
-                    <svg 
-                      className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </span>
                 </Button>
@@ -174,10 +162,10 @@ const Landing = () => {
           </div>
         </div>
 
-       
+
       </section>
 
-      
+
       {/* How It Works Section */}
       <section id="programs" className="py-20 px-4 relative">
         {/* Ocean Wave Border Top */}
@@ -220,7 +208,7 @@ const Landing = () => {
                 {index < steps.length - 1 && (
                   <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-cyan-500 to-transparent -translate-x-1/2 z-0"></div>
                 )}
-                
+
                 <Card className="border-0 shadow-xl hover:shadow-2xl transition-all h-full bg-white rounded-2xl relative z-10 hover:scale-105">
                   <CardContent className="pt-8 pb-6 text-center space-y-4">
                     <div className="relative inline-block">
@@ -268,10 +256,17 @@ const Landing = () => {
                     <p className="text-cyan-50 text-lg">
                       {t("landing.cta_subtitle")}
                     </p>
-                    <Button 
-                      size="lg" 
+                    <Button
+                      size="lg"
                       className="bg-white text-cyan-600 hover:bg-cyan-50 shadow-xl h-14 px-10 text-lg rounded-xl font-semibold hover:scale-105 transition-all"
-                      onClick={() => window.location.href = '/student-entry'}
+                      onClick={() => {
+                        const isLoggedIn = localStorage.getItem("studentId");
+                        if (isLoggedIn) {
+                          window.location.href = "/quiz/cba_trainer_potential";
+                        } else {
+                          window.location.href = "/student-entry?redirect=/quiz/cba_trainer_potential";
+                        }
+                      }}
                     >
                       {t("landing.cta_button_alt")}
                     </Button>

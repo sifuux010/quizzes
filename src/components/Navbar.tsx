@@ -50,12 +50,12 @@ export const Navbar = () => {
 
   const navLinks = [
     { to: "/", label: t("nav.home"), icon: Home },
-    { to: "/quizzes", label: t("nav.quizzes"), icon: BookOpen },
+    // { to: "/quizzes", label: t("nav.quizzes"), icon: BookOpen },
   ];
 
   return (
     <>
-      <motion.nav 
+      <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={showNav ? { y: 0, opacity: 1 } : { y: -80, opacity: 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -68,7 +68,7 @@ export const Navbar = () => {
               <img src={logoImg} alt="Logo" className="h-[95px] w-auto" />
             </div>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -87,7 +87,7 @@ export const Navbar = () => {
           {/* Desktop Right Section */}
           <div className="hidden md:flex items-center gap-4">
             <LanguageToggle />
-            
+
             {studentName ? (
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100">
@@ -163,7 +163,7 @@ export const Navbar = () => {
                   >
                     <X className="h-5 w-5" />
                   </Button>
-                  
+
                   {studentName ? (
                     <div className="flex items-center gap-3 mt-8">
                       <img src={teacherImg} alt="Trainer" className="w-16 h-16 rounded-full object-cover ring-4 ring-white/30" />
@@ -211,8 +211,8 @@ export const Navbar = () => {
                     )}
                   </div>
 
-                  
-                  
+
+
                 </div>
 
                 {/* Logout Button (if logged in) */}

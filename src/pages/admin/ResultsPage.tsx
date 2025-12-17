@@ -20,13 +20,14 @@ const ResultsPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState<"high-to-low" | "low-to-high">("high-to-low");
   const [quizFilter, setQuizFilter] = useState<string>("all");
+  const [wilayaFilter, setWilayaFilter] = useState<string>("all");
   const [selectedStudent, setSelectedStudent] = useState<any>(null);
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
 
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const response = await fetch('https://lightseagreen-alpaca-114967.hostingersite.com/backend/api/get_results.php');
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/get_results.php`);
         if (!response.ok) {
           throw new Error('Failed to fetch results');
         }
@@ -57,7 +58,8 @@ const ResultsPage = () => {
             total_questions: 0,
             time_taken_seconds: 0,
             completed_at: r.completed_at, // Keep the latest attempt date
-            id: r.student_email, // Use email as a unique key for aggregated view
+            latest_attempt_id: r.id, // Store valid attempt ID
+            // id: r.student_email, // DO NOT overwrite ID with email. Use r.id (which is unique per attempt) or keep latest_attempt_id
           });
         }
         const student = studentMap.get(r.student_email);
@@ -66,13 +68,14 @@ const ResultsPage = () => {
         student.time_taken_seconds += r.time_taken_seconds;
         if (new Date(r.completed_at) > new Date(student.completed_at)) {
           student.completed_at = r.completed_at;
+          student.latest_attempt_id = r.id; // Update to newer attempt ID
         }
       });
 
       const aggregated = Array.from(studentMap.values());
       aggregated.forEach(student => {
-        student.score_percentage = student.total_questions > 0 
-          ? Math.round((student.correct_answers / student.total_questions) * 100) 
+        student.score_percentage = student.total_questions > 0
+          ? Math.round((student.correct_answers / student.total_questions) * 100)
           : 0;
       });
       return aggregated;
@@ -82,11 +85,12 @@ const ResultsPage = () => {
 
   const filteredResults = processedResults
     .filter((r: any) => {
-      const searchMatch = 
+      const searchMatch =
         r.student_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (quizFilter !== 'all' && r.quiz_title[currentLang].toLowerCase().includes(searchQuery.toLowerCase()));
       const quizMatch = quizFilter === 'all' || r.quiz_id === quizFilter;
-      return searchMatch && quizMatch;
+      const wilayaMatch = wilayaFilter === 'all' || (r.student_wilaya && r.student_wilaya === wilayaFilter);
+      return searchMatch && quizMatch && wilayaMatch;
     })
     .sort((a: any, b: any) => {
       if (sortOrder === "high-to-low") {
@@ -96,9 +100,12 @@ const ResultsPage = () => {
     });
 
   const exportToCSV = () => {
-    const headers = ["Student Name", "Quiz Name", "Score", "Time Taken", "Date"];
+    const headers = ["Student Name", "Email", "Phone", "Wilaya", "Quiz Name", "Score", "Time Taken", "Date"];
     const rows = filteredResults.map((r: any) => [
       r.student_name,
+      r.student_email,
+      r.student_phone,
+      r.student_wilaya || '-',
       r.quiz_title[currentLang],
       `${r.correct_answers}/${r.total_questions} (${r.score_percentage}% )`,
       `${r.time_taken_seconds}s`,
@@ -139,6 +146,18 @@ const ResultsPage = () => {
                 </SelectContent>
               </Select>
 
+              <Select value={wilayaFilter} onValueChange={setWilayaFilter}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Filter by Wilaya" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Wilayas</SelectItem>
+                  <SelectItem value="Alger">Alger</SelectItem>
+                  <SelectItem value="Oran">Oran</SelectItem>
+                  <SelectItem value="Constantine">Constantine</SelectItem>
+                </SelectContent>
+              </Select>
+
               <Button
                 variant="outline"
                 onClick={() => setSortOrder(sortOrder === "high-to-low" ? "low-to-high" : "high-to-low")}
@@ -170,6 +189,7 @@ const ResultsPage = () => {
                 <TableRow>
                   <TableHead>{t("admin.student_name")}</TableHead>
                   <TableHead>{t("admin.email")}</TableHead>
+                  <TableHead>Wilaya</TableHead>
                   <TableHead>{t("admin.account_type")}</TableHead>
                   {quizFilter !== 'all' && <TableHead>{t("admin.quiz_name")}</TableHead>}
                   <TableHead>{t("admin.score")}</TableHead>
@@ -180,33 +200,33 @@ const ResultsPage = () => {
               <TableBody>
                 {isLoading ? (
                   <TableRow>
-                    <TableCell colSpan={7} className="text-center">{t("common.loading")}</TableCell>
+                    <TableCell colSpan={8} className="text-center">{t("common.loading")}</TableCell>
                   </TableRow>
                 ) : error ? (
                   <TableRow>
-                    <TableCell colSpan={7} className="text-center text-destructive">{t("common.error")}: {error}</TableCell>
+                    <TableCell colSpan={8} className="text-center text-destructive">{t("common.error")}: {error}</TableCell>
                   </TableRow>
                 ) : filteredResults.length === 0 ? (
                   <TableRow>
-                    <TableCell colSpan={7} className="text-center">{t("admin.no_results")}</TableCell>
+                    <TableCell colSpan={8} className="text-center">{t("admin.no_results")}</TableCell>
                   </TableRow>
                 ) : (
                   filteredResults.map((result: any) => (
                     <TableRow key={result.id} className="cursor-pointer hover:bg-muted/50">
                       <TableCell>
-                        <Link to={`/admin/results/${result.id}`} className="font-medium text-primary hover:underline">
+                        <Link to={`/admin/results/${result.latest_attempt_id || result.id}`} className="font-medium text-primary hover:underline">
                           {result.student_name}
                         </Link>
                       </TableCell>
                       <TableCell className="text-sm text-muted-foreground">
                         {result.student_email || '-'}
                       </TableCell>
+                      <TableCell>{result.student_wilaya || '-'}</TableCell>
                       <TableCell>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          result.has_account 
-                            ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' 
-                            : 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200'
-                        }`}>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${result.has_account
+                          ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                          : 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200'
+                          }`}>
                           {result.has_account ? t('admin.registered') : t('admin.guest')}
                         </span>
                       </TableCell>

@@ -1,13 +1,6 @@
-
 <?php
 // backend/api/student_signup.php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: https://lightseagreen-alpaca-114967.hostingersite.com/');
-header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: Content-Type');
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit(0); }
+require __DIR__ . '/../cors.php';
 
 require __DIR__ . '/../db.php';
 
@@ -29,7 +22,7 @@ try {
     // Check if email already exists
     $checkStmt = $pdo->prepare('SELECT id FROM students WHERE email = ?');
     $checkStmt->execute([$email]);
-    
+
     if ($checkStmt->fetch()) {
         http_response_code(400);
         echo json_encode(['error' => 'Email already exists']);
@@ -40,8 +33,9 @@ try {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert new student
-    $insertStmt = $pdo->prepare('INSERT INTO students (name, email, phone, password) VALUES (?, ?, ?, ?)');
-    $insertStmt->execute([$name, $email, $phone, $hashedPassword]);
+    $insertStmt = $pdo->prepare('INSERT INTO students (name, email, phone, password, wilaya) VALUES (?, ?, ?, ?, ?)');
+    $wilaya = !empty($data['wilaya']) ? $data['wilaya'] : null;
+    $insertStmt->execute([$name, $email, $phone, $hashedPassword, $wilaya]);
 
     http_response_code(201);
     echo json_encode([
@@ -51,7 +45,8 @@ try {
             'id' => $pdo->lastInsertId(),
             'name' => $name,
             'email' => $email,
-            'phone' => $phone
+            'phone' => $phone,
+            'wilaya' => $wilaya
         ]
     ]);
 

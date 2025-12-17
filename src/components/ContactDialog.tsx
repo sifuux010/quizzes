@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useTranslation } from "react-i18next";
 import { Mail, Phone, User } from "lucide-react";
 
@@ -20,6 +20,9 @@ export const ContactDialog = ({ open, onOpenChange, student }: ContactDialogProp
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{t("admin.contact_info")}</DialogTitle>
+          <DialogDescription className="sr-only">
+            Student contact details
+          </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">
           <div className="flex items-center gap-3">
