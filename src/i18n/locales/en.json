@@ -194,5 +194,10 @@
     "good": "Good",
     "average": "Average",
     "needs_work": "Needs Improvement"
+  },
+  "wilayas": {
+    "alger": "Algiers",
+    "oran": "Oran",
+    "constantine": "Constantine"
   }
 }

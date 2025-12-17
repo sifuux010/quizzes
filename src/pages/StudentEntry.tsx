@@ -249,9 +249,9 @@ const StudentEntry = () => {
                           <SelectValue placeholder={t("auth.wilaya_placeholder")} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="Alger">Alger</SelectItem>
-                          <SelectItem value="Oran">Oran</SelectItem>
-                          <SelectItem value="Constantine">Constantine</SelectItem>
+                          <SelectItem value="Alger">{t("wilayas.alger")}</SelectItem>
+                          <SelectItem value="Oran">{t("wilayas.oran")}</SelectItem>
+                          <SelectItem value="Constantine">{t("wilayas.constantine")}</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

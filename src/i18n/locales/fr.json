@@ -185,5 +185,10 @@
     "success": "Succès !",
     "cancel": "Annuler",
     "retry": "Réessayer"
+  },
+  "wilayas": {
+    "alger": "Alger",
+    "oran": "Oran",
+    "constantine": "Constantine"
   }
 }
