@@ -1,7 +1,7 @@
 <?php
 // backend/api/get_results.php
 require __DIR__ . '/../cors.php';
-
+require __DIR__ . '/../middleware/auth_admin.php'; // JWT authentication
 require __DIR__ . '/../db.php';
 
 try {
@@ -40,6 +40,7 @@ try {
     echo json_encode($results);
 
 } catch (Exception $e) {
+    error_log('Get results error: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Failed to fetch results: ' . $e->getMessage()]);
+    echo json_encode(['error' => 'Failed to fetch results']);
 }

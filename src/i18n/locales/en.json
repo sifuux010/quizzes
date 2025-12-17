@@ -95,7 +95,8 @@
     "required": "This field is required",
     "success": "Success!",
     "cancel": "Cancel",
-    "retry": "Retry"
+    "retry": "Retry",
+    "ok": "OK"
   },
   "quizList": {
     "helloName": "Hello, {{name}}!",

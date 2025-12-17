@@ -19,7 +19,15 @@ dist-ssr
 .DS_Store
 *.suo
 *.ntvs*
-*.njsproj
+*.njsproj*
 *.sln
 *.sw?
+
+# Security - Environment and sensitive files
 .env
+backend/.env
+
+# Rate limiter temporary files
+backend/rate_limits/
+/tmp/rate_limits/
+

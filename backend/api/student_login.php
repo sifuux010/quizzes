@@ -1,21 +1,22 @@
 <?php
 // backend/api/student_login.php
 require __DIR__ . '/../cors.php';
-
 require __DIR__ . '/../db.php';
+require __DIR__ . '/../utils/validator.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-if (empty($data['email']) || empty($data['password'])) {
+// Validate input
+$email = Validator::validateEmail($data['email'] ?? '');
+$password = $data['password'] ?? '';
+
+if (!$email || !Validator::required($password)) {
     http_response_code(400);
-    echo json_encode(['error' => 'Email and password are required']);
+    echo json_encode(['error' => 'Valid email and password are required']);
     exit;
 }
 
 try {
-    $email = $data['email'];
-    $password = $data['password'];
-
     $stmt = $pdo->prepare('SELECT id, name, email, phone, password FROM students WHERE email = ?');
     $stmt->execute([$email]);
     $student = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -36,7 +37,8 @@ try {
     }
 
 } catch (Exception $e) {
+    error_log('Student login error: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Failed to login: ' . $e->getMessage()]);
+    echo json_encode(['error' => 'Failed to login']);
 }
 ?>

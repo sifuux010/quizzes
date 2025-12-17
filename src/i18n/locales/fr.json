@@ -184,7 +184,8 @@
     "required": "Ce champ est requis",
     "success": "Succès !",
     "cancel": "Annuler",
-    "retry": "Réessayer"
+    "retry": "Réessayer",
+    "ok": "OK"
   },
   "wilayas": {
     "alger": "Alger",

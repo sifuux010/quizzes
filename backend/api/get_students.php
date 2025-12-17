@@ -1,7 +1,7 @@
 <?php
 // backend/api/get_students.php
 require __DIR__ . '/../cors.php';
-
+require __DIR__ . '/../middleware/auth_admin.php'; // JWT authentication
 require __DIR__ . '/../db.php';
 
 $quizId = $_GET['quiz_id'] ?? null;
@@ -50,6 +50,7 @@ try {
     echo json_encode($students);
 
 } catch (Exception $e) {
+    error_log('Get students error: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Failed to fetch students: ' . $e->getMessage()]);
+    echo json_encode(['error' => 'Failed to fetch students']);
 }

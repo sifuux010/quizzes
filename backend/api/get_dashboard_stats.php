@@ -1,7 +1,7 @@
 <?php
 // backend/api/get_dashboard_stats.php
 require __DIR__ . '/../cors.php';
-
+require __DIR__ . '/../middleware/auth_admin.php'; // JWT authentication
 require __DIR__ . '/../db.php';
 
 try {
@@ -44,6 +44,7 @@ try {
     echo json_encode($stats);
 
 } catch (Exception $e) {
+    error_log('Get dashboard stats error: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Failed to fetch dashboard stats: ' . $e->getMessage()]);
+    echo json_encode(['error' => 'Failed to fetch dashboard stats']);
 }
