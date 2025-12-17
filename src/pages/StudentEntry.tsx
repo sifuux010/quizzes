@@ -240,13 +240,13 @@ const StudentEntry = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="signup-wilaya">Wilaya</Label>
+                      <Label htmlFor="signup-wilaya">{t("auth.wilaya")}</Label>
                       <Select
                         onValueChange={(value) => setSignupData({ ...signupData, wilaya: value })}
                         value={signupData.wilaya}
                       >
                         <SelectTrigger>
-                          <SelectValue placeholder="Select Wilaya" />
+                          <SelectValue placeholder={t("auth.wilaya_placeholder")} />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="Alger">Alger</SelectItem>
