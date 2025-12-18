@@ -39,10 +39,10 @@ All colors MUST be HSL.
     --ring: 217 91% 60%;
 
     --radius: 0.75rem;
-    
+
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
-    
+
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
@@ -91,10 +91,10 @@ All colors MUST be HSL.
     --border: 217 32% 18%;
     --input: 217 32% 18%;
     --ring: 217 91% 60%;
-    
+
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
-    
+
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
     --sidebar-background: 240 5.9% 10%;
@@ -117,8 +117,13 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: 600;
   }
 
@@ -127,6 +132,7 @@ All colors MUST be HSL.
     font-family: 'Poppins', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     letter-spacing: -0.01em;
   }
+
   html[dir="rtl"] .heading-display {
     font-family: 'Tajawal', 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     letter-spacing: 0;

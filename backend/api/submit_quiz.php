@@ -26,8 +26,8 @@ if (!Validator::required($studentName) || !Validator::validateLength($studentNam
 }
 
 // Validate quiz ID
-$quizId = Validator::validateInt($data['quizId'], 1);
-if ($quizId === false) {
+$quizId = Validator::sanitizeString($data['quizId']);
+if (empty($quizId)) {
     http_response_code(400);
     echo json_encode(['error' => 'Invalid quiz ID']);
     exit;

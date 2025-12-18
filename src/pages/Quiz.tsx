@@ -79,7 +79,7 @@ const Quiz = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [isLoading, quiz]);
+  }, [isLoading, quiz, isStarted]);
 
   const handleSubmit = async () => {
     if (!quiz) return;

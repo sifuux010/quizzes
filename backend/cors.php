@@ -8,8 +8,7 @@ require_once __DIR__ . '/config.php';
 
 $allowedOrigins = [
     ALLOWED_ORIGIN,
-    'http://localhost:8080',
-    'http://127.0.0.1:8080'
+    'https://apc.takwin.dz'
 ];
 
 // CORS Headers
