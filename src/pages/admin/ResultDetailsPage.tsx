@@ -12,20 +12,25 @@ const ResultDetailsPage = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language as 'en' | 'fr' | 'ar';
   const [attempt, setAttempt] = useState<any>(null);
-  const [debug, setDebug] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/get_result_details.php?id=${attemptId}`);
+        const token = localStorage.getItem('adminToken');
+
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/backend/api/get_result_details.php?id=${attemptId}`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
         const data = await response.json();
 
         if (!response.ok) throw new Error(data.error || 'Failed to fetch result details');
 
-        setAttempt(data.attempt); // ✅ fixed
-        setDebug(data.debug);
+        setAttempt(data); // Backend now returns attempt directly, not wrapped
       } catch (err: any) {
         setError(err.message);
       } finally {

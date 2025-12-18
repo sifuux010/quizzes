@@ -86,7 +86,18 @@
     "time_over_title": "Time's Up!",
     "time_over_desc": "The time allotted for the quiz has run out. You cannot answer any more questions. Please submit your quiz now.",
     "submitted_title": "Submitted Successfully",
-    "submitted_desc": "Your quiz is submitted successfully and you will get your result soon."
+    "submitted_desc": "Your quiz is submitted successfully and you will get your result soon.",
+    "instructions": {
+      "title": "Important Instructions",
+      "attempt_warning_title": "First Attempt Only",
+      "attempt_warning_desc": "Only your first attempt will be counted for the official ranking.",
+      "ranking_rule_title": "Ranking Criteria",
+      "ranking_rule_desc": "Both Score and Time Taken are used for ranking. In case of tie scores, faster time wins!",
+      "tech_warning_title": "Do Not Refresh",
+      "tech_warning_desc": "Do not refresh the page or switch tabs during the quiz. You may lose your progress.",
+      "ministry_msg": "The Ministry of Vocational Training and Education wishes you good luck!",
+      "start_btn": "I Understand, Start Quiz"
+    }
   },
   "common": {
     "student": "Student",

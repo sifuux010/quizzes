@@ -8,7 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { Navbar } from "@/components/Navbar";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Clock, CheckCircle2, AlertCircle, ChevronRight, ChevronLeft, Flag } from "lucide-react";
+import { Clock, CheckCircle2, AlertCircle, ChevronRight, ChevronLeft, Flag, Trophy, AlertTriangle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import {
   AlertDialog,
@@ -37,6 +37,8 @@ const Quiz = () => {
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [direction, setDirection] = useState(0);
+  const [showInstructions, setShowInstructions] = useState(true);
+  const [isStarted, setIsStarted] = useState(false);
 
   useEffect(() => {
     const fetchQuiz = async () => {
@@ -63,7 +65,7 @@ const Quiz = () => {
   }, [quizId, navigate]);
 
   useEffect(() => {
-    if (isLoading || !quiz) return;
+    if (isLoading || !quiz || !isStarted) return;
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -506,6 +508,72 @@ const Quiz = () => {
           <AlertDialogFooter>
             <Button onClick={() => navigate('/')} className="w-full bg-green-600 hover:bg-green-700 text-white">
               {t("common.ok") || "OK"}
+            </Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <AlertDialog open={showInstructions}>
+        <AlertDialogContent className="w-[95vw] max-w-2xl p-0 overflow-hidden border-0 shadow-2xl max-h-[90vh] flex flex-col">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white text-center shrink-0">
+            <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
+              <AlertTriangle className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+            </div>
+            <AlertDialogTitle className="text-xl sm:text-2xl font-bold mb-2">
+              {t('quiz.instructions.title')}
+            </AlertDialogTitle>
+            <p className="text-blue-100 text-xs sm:text-sm px-2">
+              {t('quiz.instructions.ministry_msg')}
+            </p>
+          </div>
+
+          <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 bg-white overflow-y-auto">
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
+              <div className="bg-orange-50 p-4 rounded-xl border border-orange-100 text-center">
+                <div className="mx-auto w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-3">
+                  <Flag className="h-5 w-5 text-orange-600" />
+                </div>
+                <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{t('quiz.instructions.attempt_warning_title')}</h4>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  {t('quiz.instructions.attempt_warning_desc')}
+                </p>
+              </div>
+
+              <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 text-center">
+                <div className="mx-auto w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                  <Trophy className="h-5 w-5 text-blue-600" />
+                </div>
+                <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{t('quiz.instructions.ranking_rule_title')}</h4>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  {t('quiz.instructions.ranking_rule_desc')}
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-red-50 p-4 rounded-xl border border-red-100 flex gap-4 items-start">
+              <div className="mt-1 shrink-0">
+                <AlertCircle className="h-5 w-5 text-red-600" />
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{t('quiz.instructions.tech_warning_title')}</h4>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  {t('quiz.instructions.tech_warning_desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <AlertDialogFooter className="p-4 sm:p-6 bg-gray-50 border-t items-center sm:justify-center shrink-0">
+            <Button
+              size="lg"
+              className="w-full sm:w-auto min-w-[200px] text-base sm:text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 shadow-lg hover:shadow-xl transition-all"
+              onClick={() => {
+                setShowInstructions(false);
+                setIsStarted(true);
+                setStartTime(Date.now());
+              }}
+            >
+              {t('quiz.instructions.start_btn')}
             </Button>
           </AlertDialogFooter>
         </AlertDialogContent>

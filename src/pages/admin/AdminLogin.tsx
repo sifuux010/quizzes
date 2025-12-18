@@ -33,8 +33,13 @@ const AdminLogin = () => {
 
       const data = await response.json();
 
-      if (data.ok) {
-        localStorage.setItem("isAdminLoggedIn", "true");
+      if (data.success) {
+        // Store JWT token and expiry
+        localStorage.setItem("adminToken", data.token);
+        localStorage.setItem("tokenExpiry", String(Date.now() + data.expiresIn * 1000));
+        localStorage.setItem("adminUsername", data.username);
+        localStorage.setItem("isAdminLoggedIn", "true"); // Keep for compatibility
+
         toast.success(t("common.success"));
         navigate("/admin/dashboard");
       } else {

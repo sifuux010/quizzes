@@ -86,7 +86,18 @@
     "time_over_title": "Temps écoulé !",
     "time_over_desc": "Le temps imparti pour le quiz est écoulé. Vous ne pouvez plus répondre aux questions. Veuillez soumettre votre quiz maintenant.",
     "submitted_title": "Soumis avec succès",
-    "submitted_desc": "Votre quiz a été soumis avec succès et vous recevrez bientôt votre résultat."
+    "submitted_desc": "Votre quiz a été soumis avec succès et vous recevrez bientôt votre résultat.",
+    "instructions": {
+      "title": "Instructions Importantes",
+      "attempt_warning_title": "Première Tentative Uniquement",
+      "attempt_warning_desc": "Seule votre première tentative sera comptabilisée pour le classement officiel.",
+      "ranking_rule_title": "Critères de Classement",
+      "ranking_rule_desc": "Le score et le temps pris sont utilisés pour le classement. En cas d'égalité, le temps le plus rapide l'emporte !",
+      "tech_warning_title": "Ne Pas Rafraîchir",
+      "tech_warning_desc": "Ne rafraîchissez pas la page et ne changez pas d'onglet. Vous risquez de perdre votre progression.",
+      "ministry_msg": "Le Ministère de la Formation et de l'Enseignement Professionnels vous souhaite bonne chance !",
+      "start_btn": "J'ai compris, Commencer"
+    }
   },
   "quizList": {
     "title": "Quiz disponibles",
