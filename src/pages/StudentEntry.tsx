@@ -18,6 +18,21 @@ import { Navbar } from "@/components/Navbar";
 import { toast } from "sonner";
 import { Eye, EyeOff, UserPlus, LogIn } from "lucide-react";
 
+const WILAYA_KEYS = [
+  "adrar", "chlef", "laghouat", "oum_el_bouaghi", "batna", "bejaia", "biskra", "bechar",
+  "blida", "bouira", "tamanrasset", "tebessa", "tlemcen", "tiaret", "tizi_ouzou", "alger",
+  "djelfa", "jijel", "setif", "saida", "skikda", "sidi_bel_abbes", "annaba", "guelma",
+  "constantine", "medea", "mostaganem", "msila", "mascara", "ouargla", "oran", "el_bayadh",
+  "illizi", "bordj_bou_arreridj", "boumerdes", "el_tarf", "tindouf", "tissemsilt", "el_oued",
+  "khenchela", "souk_ahras", "tipaza", "mila", "ain_defla", "naama", "ain_temouchent",
+  "ghardaia", "relizane", "timimoun", "bordj_badji_mokhtar", "ouled_djellal", "beni_abbes",
+  "in_salah", "in_guezzam", "touggourt", "djanet", "el_mghair", "el_menia",
+  "aflou", "barika", "ksar_chellala", "messaad", "ain_oussera", "boussaada",
+  "el_abiodh_sidi_cheikh", "el_kantara", "bir_el_ater", "ksar_el_boukhari", "el_aricha"
+];
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const StudentEntry = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -90,6 +105,21 @@ const StudentEntry = () => {
 
     if (signupData.password.length < 6) {
       toast.error(t('auth.password_too_short'));
+      return;
+    }
+
+    if (!EMAIL_REGEX.test(signupData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    if (!signupData.phone || signupData.phone.trim() === "") {
+      toast.error("Phone number is required");
+      return;
+    }
+
+    if (!signupData.wilaya) {
+      toast.error("Please select a wilaya");
       return;
     }
 
@@ -244,14 +274,17 @@ const StudentEntry = () => {
                       <Select
                         onValueChange={(value) => setSignupData({ ...signupData, wilaya: value })}
                         value={signupData.wilaya}
+                        required
                       >
                         <SelectTrigger>
                           <SelectValue placeholder={t("auth.wilaya_placeholder")} />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="Alger">{t("wilayas.alger")}</SelectItem>
-                          <SelectItem value="Oran">{t("wilayas.oran")}</SelectItem>
-                          <SelectItem value="Constantine">{t("wilayas.constantine")}</SelectItem>
+                        <SelectContent className="max-h-[300px]">
+                          {WILAYA_KEYS.map((wilaya, index) => (
+                            <SelectItem key={wilaya} value={wilaya}>
+                              {index + 1}. {t(`wilayas.${wilaya}`)}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                     </div>
@@ -264,6 +297,7 @@ const StudentEntry = () => {
                         placeholder={t("auth.phone_placeholder")}
                         value={signupData.phone}
                         onChange={(e) => setSignupData({ ...signupData, phone: e.target.value })}
+                        required
                       />
                     </div>
 

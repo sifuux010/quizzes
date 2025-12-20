@@ -11,6 +11,20 @@ import { Download, Search, ArrowUpDown, Filter, Users, Trophy, Clock, TrendingUp
 import { toast } from "sonner";
 import { ContactDialog } from "@/components/ContactDialog";
 
+const WILAYA_KEYS = [
+  "adrar", "chlef", "laghouat", "oum_el_bouaghi", "batna", "bejaia", "biskra", "bechar",
+  "blida", "bouira", "tamanrasset", "tebessa", "tlemcen", "tiaret", "tizi_ouzou", "alger",
+  "djelfa", "jijel", "setif", "saida", "skikda", "sidi_bel_abbes", "annaba", "guelma",
+  "constantine", "medea", "mostaganem", "msila", "mascara", "ouargla", "oran", "el_bayadh",
+  "illizi", "bordj_bou_arreridj", "boumerdes", "el_tarf", "tindouf", "tissemsilt", "el_oued",
+  "khenchela", "souk_ahras", "tipaza", "mila", "ain_defla", "naama", "ain_temouchent",
+  "ghardaia", "relizane", "timimoun", "bordj_badji_mokhtar", "ouled_djellal", "beni_abbes",
+  "in_salah", "in_guezzam", "touggourt", "djanet", "el_mghair", "el_menia",
+  "aflou", "barika", "ksar_chellala", "messaad", "ain_oussera", "boussaada",
+  "el_abiodh_sidi_cheikh", "el_kantara", "bir_el_ater", "ksar_el_boukhari", "el_aricha"
+];
+
+
 const ResultsPage = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language as 'en' | 'fr' | 'ar';
@@ -269,10 +283,12 @@ const ResultsPage = () => {
                     <SelectValue placeholder="Filter by Wilaya" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Wilayas</SelectItem>
-                    <SelectItem value="Alger">Alger</SelectItem>
-                    <SelectItem value="Oran">Oran</SelectItem>
-                    <SelectItem value="Constantine">Constantine</SelectItem>
+                    <SelectItem value="all">{t("admin.all_wilayas") || "All Wilayas"}</SelectItem>
+                    {WILAYA_KEYS.map((wilayaKey) => (
+                      <SelectItem key={wilayaKey} value={wilayaKey}>
+                        {t(`wilayas.${wilayaKey}`)}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
 

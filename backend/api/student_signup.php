@@ -7,16 +7,22 @@ require __DIR__ . '/../db.php';
 $data = json_decode(file_get_contents('php://input'), true);
 
 // Validate required fields
-if (empty($data['name']) || empty($data['email']) || empty($data['password'])) {
+if (empty($data['name']) || empty($data['email']) || empty($data['password']) || empty($data['phone']) || empty($data['wilaya'])) {
     http_response_code(400);
-    echo json_encode(['error' => 'Name, email, and password are required']);
+    echo json_encode(['error' => 'All fields are required (Name, Email, Phone, Wilaya, Password)']);
+    exit;
+}
+
+if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Invalid email format']);
     exit;
 }
 
 try {
     $name = $data['name'];
     $email = $data['email'];
-    $phone = $data['phone'] ?? null;
+    $phone = $data['phone'];
     $password = $data['password'];
 
     // Check if email already exists

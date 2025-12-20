@@ -97,18 +97,18 @@
           "question": {
             "en": "When you think about training, you think first of:",
             "fr": "Quand vous pensez à la formation, vous pensez d'abord à :",
-            "ar": "عندما تفكر في التكوين، تفكر أولاً في:"
+            "ar": "عندما تفكّر في التكوين، فإنك تفكّر أساسًا في:"
           },
           "options": [
             {
               "en": "Transmitting knowledge",
               "fr": "Transmettre un savoir",
-              "ar": "نقل المعرفة"
+              "ar": "نقل المعارف"
             },
             {
               "en": "Transforming a person",
               "fr": "Transformer une personne",
-              "ar": "تحويل شخص"
+              "ar": "بناء الكفاءات وإحداث تغيير لدى المتكوّنين"
             },
             {
               "en": "Respecting a program",
@@ -118,7 +118,7 @@
             {
               "en": "Managing a session",
               "fr": "Gérer une séance",
-              "ar": "إدارة الجلسة"
+              "ar": "تسيير الحصة"
             }
           ],
           "correctAnswer": 1
@@ -128,28 +128,28 @@
           "question": {
             "en": "For you, a good trainer is above all someone who:",
             "fr": "Pour vous, un bon formateur est avant tout quelqu'un qui :",
-            "ar": "بالنسبة لك، المكوّن الجيد هو قبل كل شيء شخص:"
+            "ar": "المكوّن الجيد هو من:"
           },
           "options": [
             {
               "en": "Explains well",
               "fr": "Explique bien",
-              "ar": "يشرح جيداً"
+              "ar": "يشرح المحتوى فقط"
             },
             {
               "en": "Makes people think",
               "fr": "Fait réfléchir",
-              "ar": "يجعل الآخرين يفكرون"
+              "ar": "يساعد المتكوّنين على التفكير"
             },
             {
               "en": "Controls their class",
               "fr": "Contrôle sa classe",
-              "ar": "يسيطر على القسم"
+              "ar": "يفرض الانضباط"
             },
             {
               "en": "Follows instructions",
               "fr": "Suit les consignes",
-              "ar": "يتبع التعليمات"
+              "ar": "يلتزم بالتعليمات فقط"
             }
           ],
           "correctAnswer": 1
@@ -159,28 +159,28 @@
           "question": {
             "en": "When a learner fails, you think:",
             "fr": "Quand un apprenant échoue, vous pensez :",
-            "ar": "عندما يفشل أحد المتعلمين، تفكر:"
+            "ar": "عند تعثّر أحد المتكوّنين، فإنك تعتبر أن:"
           },
           "options": [
             {
               "en": "They didn't listen",
               "fr": "Il n'a pas écouté",
-              "ar": "لم يستمع"
+              "ar": "المتكوّن لم يكن منتبهًا"
             },
             {
               "en": "I didn't find the right learning lever",
               "fr": "Je n'ai pas trouvé le bon levier d'apprentissage",
-              "ar": "لم أجد الرافعة الصحيحة للتعلم"
+              "ar": "أسلوب المرافقة لم يكن مناسبًا"
             },
             {
               "en": "They're not motivated",
               "fr": "Il n'est pas motivé",
-              "ar": "ليس لديه حافز"
+              "ar": "المتكوّن غير مهتم"
             },
             {
               "en": "The course needs to be redone",
               "fr": "Il faut refaire le cours",
-              "ar": "يجب إعادة الدرس"
+              "ar": "يجب إعادة الشرح"
             }
           ],
           "correctAnswer": 1
@@ -190,7 +190,7 @@
           "question": {
             "en": "Your main satisfaction after training:",
             "fr": "Votre principale satisfaction après une formation :",
-            "ar": "رضاك الأساسي بعد التكوين:"
+            "ar": "رضاك المهني بعد التكوين يتمثل في:"
           },
           "options": [
             {
@@ -201,12 +201,12 @@
             {
               "en": "Seeing a learner transfer what they learned into real life",
               "fr": "Voir un apprenant transférer ce qu'il a appris dans la vraie vie",
-              "ar": "رؤية متعلم ينقل ما تعلمه إلى الحياة الواقعية"
+              "ar": "قدرة المتكوّنين على تطبيق ما تعلّموه في الواقع"
             },
             {
               "en": "Receiving good feedback",
               "fr": "Recevoir de bons feedbacks",
-              "ar": "تلقي تعليقات إيجابية"
+              "ar": "الحصول على آراء إيجابية"
             },
             {
               "en": "Having kept to the schedule",
@@ -227,22 +227,22 @@
             {
               "en": "Guide without imposing",
               "fr": "Guider sans imposer",
-              "ar": "التوجيه دون فرض"
+              "ar": "المرافقة والتوجيه"
             },
             {
               "en": "Teach content",
               "fr": "Enseigner un contenu",
-              "ar": "تعليم محتوى"
+              "ar": "تلقين المحتوى"
             },
             {
               "en": "Evaluate learners",
               "fr": "Évaluer les apprenants",
-              "ar": "تقييم المتعلمين"
+              "ar": "مراقبة المتكوّنين"
             },
             {
               "en": "Answer questions",
               "fr": "Répondre aux questions",
-              "ar": "الإجابة على الأسئلة"
+              "ar": "الإجابة عن الأسئلة فقط"
             }
           ],
           "correctAnswer": 0
@@ -252,28 +252,28 @@
           "question": {
             "en": "When a participant contradicts your point of view, you:",
             "fr": "Quand un participant contredit votre point de vue, vous :",
-            "ar": "عندما يناقض أحد المشاركين وجهة نظرك، أنت:"
+            "ar": "عندما يعارض أحد المتكوّنين رأيك، فإنك:"
           },
           "options": [
             {
               "en": "Cut short to maintain order",
               "fr": "Coupez court pour garder l'ordre",
-              "ar": "تقطع الكلام للحفاظ على النظام"
+              "ar": "تقاطعه للحفاظ على النظام"
             },
             {
               "en": "Invite them to argue and open the debate",
               "fr": "L'invitez à argumenter et ouvrez le débat",
-              "ar": "تدعوه للحجة وتفتح النقاش"
+              "ar": "تفتح نقاشًا وتطلب منه توضيح رأيه"
             },
             {
               "en": "Change the subject",
               "fr": "Changez de sujet",
-              "ar": "تغير الموضوع"
+              "ar": "تغيّر الموضوع"
             },
             {
               "en": "Show that they're wrong",
               "fr": "Montrez qu'il a tort",
-              "ar": "تثبت أنه مخطئ"
+              "ar": "تحاول إثبات خطئه"
             }
           ],
           "correctAnswer": 1
@@ -293,23 +293,23 @@
           "question": {
             "en": "Faced with experienced trainees, your priority is to:",
             "fr": "Face à des stagiaires expérimentés, votre priorité est de :",
-            "ar": "أمام متدربين ذوي خبرة، أولويتك هي:"
+            "ar": "أمام متكوّنين ذوي خبرة، تكون أولويتك:"
           },
           "options": [
             {
               "en": "Teach them theory",
               "fr": "Leur enseigner la théorie",
-              "ar": "تعليمهم النظرية"
+              "ar": "تقديم النظرية"
             },
             {
               "en": "Bring out their experiences and share them",
               "fr": "Faire émerger leurs expériences et les partager",
-              "ar": "إظهار تجاربهم ومشاركتها"
+              "ar": "تثمين خبراتهم المهنية"
             },
             {
               "en": "Give tools",
               "fr": "Donner des outils",
-              "ar": "إعطاء أدوات"
+              "ar": "إعطاؤهم أدوات جاهزة"
             },
             {
               "en": "Maintain discipline",
@@ -324,7 +324,7 @@
           "question": {
             "en": "An activity doesn't produce the expected effects. You:",
             "fr": "Une activité ne produit pas les effets attendus. Vous :",
-            "ar": "النشاط لا ينتج النتائج المتوقعة. أنت:"
+            "ar": "إذا لم يحقق نشاط تكويني النتائج المتوقعة، فإنك:"
           },
           "options": [
             {
@@ -335,17 +335,17 @@
             {
               "en": "Analyze in real-time what's blocking and adjust",
               "fr": "Analysez en direct ce qui bloque et ajustez",
-              "ar": "تحلل مباشرة ما الذي يعيق وتعدّل"
+              "ar": "تحلّل الأسباب وتعدّل النشاط"
             },
             {
               "en": "Note it for next time",
               "fr": "Notez pour la prochaine fois",
-              "ar": "تلاحظ للمرة القادمة"
+              "ar": "تتركه للمرة القادمة"
             },
             {
               "en": "Move to a quiz",
               "fr": "Passez à un quiz",
-              "ar": "تنتقل إلى اختبار"
+              "ar": "تنتقل مباشرة إلى التقييم"
             }
           ],
           "correctAnswer": 1
@@ -355,7 +355,7 @@
           "question": {
             "en": "Your favorite method is:",
             "fr": "Votre méthode favorite est :",
-            "ar": "طريقتك المفضلة هي:"
+            "ar": "المنهج الذي تعتمد عليه أساسًا هو:"
           },
           "options": [
             {
@@ -392,17 +392,17 @@
             {
               "en": "Answer quickly to move forward",
               "fr": "Répondez rapidement pour avancer",
-              "ar": "تجيب بسرعة للمضي قدماً"
+              "ar": "تجيب بسرعة وتواصل"
             },
             {
               "en": "Rephrase the question and integrate it into the discussion",
               "fr": "Reformulez la question et l'intégrez à la discussion",
-              "ar": "تعيد صياغة السؤال وتدمجه في النقاش"
+              "ar": "تعيد شرح الهدف من النشاط وتناقشه مع المجموعة"
             },
             {
               "en": "Postpone the answer",
               "fr": "Reportez la réponse à plus tard",
-              "ar": "تؤجل الإجابة إلى وقت لاحق"
+              "ar": "تؤجل الإجابة"
             },
             {
               "en": "Say: 'It's in the program'",
@@ -417,23 +417,23 @@
           "question": {
             "en": "When you design an activity, you start from:",
             "fr": "Quand vous concevez une activité, vous partez :",
-            "ar": "عندما تصمم نشاطاً، تبدأ من:"
+            "ar": "عند تصميم نشاط تكويني، تنطلق أساسًا من:"
           },
           "options": [
             {
               "en": "Contents",
               "fr": "Des contenus",
-              "ar": "المحتويات"
+              "ar": "المحتوى"
             },
             {
               "en": "Competencies to develop",
               "fr": "Des compétences à développer",
-              "ar": "الكفاءات المراد تطويرها"
+              "ar": "الكفاءة المستهدفة"
             },
             {
               "en": "Available materials",
               "fr": "Du matériel disponible",
-              "ar": "المواد المتاحة"
+              "ar": "الوسائل المتاحة"
             },
             {
               "en": "Allocated time",
@@ -448,28 +448,28 @@
           "question": {
             "en": "To motivate adults:",
             "fr": "Pour motiver les adultes :",
-            "ar": "لتحفيز البالغين:"
+            "ar": "لتحفيز المتكوّنين، تعتمد أساسًا على:"
           },
           "options": [
             {
               "en": "Use concrete role plays",
               "fr": "Utiliser des jeux de rôle concrets",
-              "ar": "استخدام لعب الأدوار الملموسة"
+              "ar": "أنشطة تطبيقية ووضعيات عملية"
             },
             {
               "en": "Give more information",
               "fr": "Donner plus d'informations",
-              "ar": "إعطاء مزيد من المعلومات"
+              "ar": "تقديم معلومات إضافية"
             },
             {
               "en": "Promise validation",
               "fr": "Promettre une validation",
-              "ar": "الوعد بالمصادقة"
+              "ar": "وجود اختبار أو امتحان"
             },
             {
               "en": "Reduce duration",
               "fr": "Réduire la durée",
-              "ar": "تقليل المدة"
+              "ar": "تقليص مدة التكوين"
             }
           ],
           "correctAnswer": 0
@@ -489,18 +489,18 @@
           "question": {
             "en": "A successful training is measured by:",
             "fr": "Une formation réussie se mesure à :",
-            "ar": "يُقاس نجاح التكوين بـ:"
+            "ar": "يُقاس نجاح التكوين أساسًا بـ:"
           },
           "options": [
             {
               "en": "Trainees' satisfaction",
               "fr": "La satisfaction des stagiaires",
-              "ar": "رضا المتدربين"
+              "ar": "رضا المتكوّنين"
             },
             {
               "en": "Impact on real competence",
               "fr": "L'impact sur la compétence réelle",
-              "ar": "التأثير على الكفاءة الفعلية"
+              "ar": "تحسّن الكفاءة الفعلية للمتكوّنين"
             },
             {
               "en": "PowerPoint quality",
@@ -520,28 +520,28 @@
           "question": {
             "en": "You must build training from the reference framework. You:",
             "fr": "Vous devez construire une formation à partir du référentiel. Vous :",
-            "ar": "يجب عليك بناء تكوين من المرجع. أنت:"
+            "ar": "عند إعداد برنامج تكويني، فإنك:"
           },
           "options": [
             {
               "en": "Take contents line by line",
               "fr": "Reprenez les contenus ligne par ligne",
-              "ar": "تأخذ المحتويات سطراً بسطر"
+              "ar": "تعتمد المحتوى كما هو"
             },
             {
               "en": "Break down each competency into criteria and situations",
               "fr": "Décomposez chaque compétence en critères et situations",
-              "ar": "تقسّم كل كفاءة إلى معايير ووضعيات"
+              "ar": "تبني الأنشطة انطلاقًا من الكفاءات المطلوبة"
             },
             {
               "en": "Copy a previous version",
               "fr": "Copiez une version précédente",
-              "ar": "تنسخ نسخة سابقة"
+              "ar": "تستعمل نموذجًا جاهزًا"
             },
             {
               "en": "Simplify the reference framework",
               "fr": "Simplifiez le référentiel",
-              "ar": "تبسّط المرجع"
+              "ar": "تختصر البرنامج"
             }
           ],
           "correctAnswer": 1
@@ -551,7 +551,7 @@
           "question": {
             "en": "A non-CBA trainer asks you for advice. You:",
             "fr": "Un formateur non-APC vous demande conseil. Vous :",
-            "ar": "مكوّن غير مستمر في المقاربة بالكفاءات يطلب نصيحتك. أنت:"
+            "ar": "مكوّن مبتدئ في المقاربة بالكفاءات يطلب توجيهك، فإنك:"
           },
           "options": [
             {
@@ -562,7 +562,7 @@
             {
               "en": "Help them reformulate their objectives in terms of competencies",
               "fr": "L'aidez à reformuler ses objectifs en termes de compétences",
-              "ar": "تساعده على إعادة صياغة أهدافه من حيث الكفاءات"
+              "ar": "تُحيله إلى مراجعك"
             },
             {
               "en": "Invite them to observe",
@@ -582,18 +582,18 @@
           "question": {
             "en": "The biggest trap of CBA:",
             "fr": "Le plus grand piège de l'APC :",
-            "ar": "الفخ الأكبر للمقاربة بالكفاءات:"
+            "ar": "أكبر انحراف في تطبيق المقاربة بالكفاءات هو:"
           },
           "options": [
             {
               "en": "Too much theory",
               "fr": "Trop de théorie",
-              "ar": "الكثير من النظرية"
+              "ar": "كثرة التمارين"
             },
             {
               "en": "Too much content without connection to competency",
               "fr": "Trop de contenus sans lien avec la compétence",
-              "ar": "الكثير من المحتويات دون علاقة بالكفاءة"
+              "ar": "التركيز على المحتوى بدل الكفاءة"
             },
             {
               "en": "Too many exercises",
@@ -613,18 +613,18 @@
           "question": {
             "en": "Training three different audiences on the same competency:",
             "fr": "Former trois publics différents sur la même compétence :",
-            "ar": "تكوين ثلاثة جماهير مختلفة على نفس الكفاءة:"
+            "ar": "عند تكوين فئات مختلفة حول نفس الكفاءة، فإنك:"
           },
           "options": [
             {
               "en": "Repeat the same session",
               "fr": "Répéter la même séance",
-              "ar": "تكرار نفس الجلسة"
+              "ar": "تكرّر نفس الحصة"
             },
             {
               "en": "Contextualize according to the profession",
               "fr": "Contextualiser selon le métier",
-              "ar": "السياقية حسب المهنة"
+              "ar": "تكيّف التكوين حسب السياق المهني"
             },
             {
               "en": "Simplify the competency",
@@ -634,7 +634,7 @@
             {
               "en": "Extend the duration",
               "fr": "Allonger la durée",
-              "ar": "إطالة المدة"
+              "ar": "تطيل المدة"
             }
           ],
           "correctAnswer": 1
@@ -644,28 +644,28 @@
           "question": {
             "en": "Sign of a mature CBA system:",
             "fr": "Signe d'un dispositif APC mature :",
-            "ar": "علامة جهاز المقاربة بالكفاءات الناضج:"
+            "ar": "من مؤشرات نضج تطبيق المقاربة بالكفاءات:"
           },
           "options": [
             {
               "en": "Learners are happy",
               "fr": "Les apprenants sont contents",
-              "ar": "المتعلمون سعداء"
+              "ar": "رضا المتكوّنين"
             },
             {
               "en": "Criteria and activities are coherent",
               "fr": "Les critères et activités sont cohérents",
-              "ar": "المعايير والأنشطة متماسكة"
+              "ar": "انسجام الكفاءة مع الأنشطة والتقويم"
             },
             {
               "en": "PowerPoint is uniform",
               "fr": "Le PowerPoint est homogène",
-              "ar": "العرض التقديمي موحد"
+              "ar": "توحيد العروض"
             },
             {
               "en": "Evaluation is quick",
               "fr": "L'évaluation est rapide",
-              "ar": "التقييم سريع"
+              "ar": "سرعة الإنجاز"
             }
           ],
           "correctAnswer": 1
@@ -685,18 +685,18 @@
           "question": {
             "en": "A learner criticizes your method in front of the group. You:",
             "fr": "Un apprenant critique votre méthode devant le groupe. Vous :",
-            "ar": "متعلم ينتقد طريقتك أمام المجموعة. أنت:"
+            "ar": "إذا انتقد أحد المتكوّنين طريقتك أمام المجموعة، فإنك:"
           },
           "options": [
             {
               "en": "React firmly",
               "fr": "Réagissez fermement",
-              "ar": "تتفاعل بحزم"
+              "ar": "تتدخل بحزم"
             },
             {
               "en": "Invite them to express themselves and transform the situation into learning",
               "fr": "L'invitez à s'exprimer et transformez la situation en apprentissage",
-              "ar": "تدعوه للتعبير وتحوّل الموقف إلى تعلم"
+              "ar": "تحوّل الموقف إلى فرصة تعلّم"
             },
             {
               "en": "Ignore them",
@@ -706,7 +706,7 @@
             {
               "en": "Interrupt the debate",
               "fr": "Interrompez le débat",
-              "ar": "تقاطع النقاش"
+              "ar": "توقف النقاش"
             }
           ],
           "correctAnswer": 1
@@ -716,7 +716,7 @@
           "question": {
             "en": "Your group management:",
             "fr": "Votre gestion du groupe :",
-            "ar": "إدارتك للمجموعة:"
+            "ar": "أسلوبك في تسيير المجموعة هو:"
           },
           "options": [
             {
@@ -727,17 +727,17 @@
             {
               "en": "Participative and open",
               "fr": "Participative et ouverte",
-              "ar": "تشاركية ومنفتحة"
+              "ar": "تشاركي"
             },
             {
               "en": "Authoritarian",
               "fr": "Autoritaire",
-              "ar": "سلطوية"
+              "ar": "توجيهي صارم"
             },
             {
               "en": "Detached",
               "fr": "Détachée",
-              "ar": "منفصلة"
+              "ar": "منعزل"
             }
           ],
           "correctAnswer": 1
@@ -747,28 +747,28 @@
           "question": {
             "en": "You sense a drop in energy. You:",
             "fr": "Vous sentez une baisse d'énergie. Vous :",
-            "ar": "تشعر بانخفاض في الطاقة. أنت:"
+            "ar": "عند انخفاض طاقة المجموعة، فإنك:"
           },
           "options": [
             {
               "en": "Improvise collective reflection",
               "fr": "Improvisez une réflexion collective",
-              "ar": "تُجري تفكيراً جماعياً"
+              "ar": "تطلق نشاطًا تفاعليًا"
             },
             {
               "en": "Continue",
               "fr": "Continuez",
-              "ar": "تواصل"
+              "ar": "تواصل بنفس الوتيرة"
             },
             {
               "en": "Move to theory",
               "fr": "Passez à la théorie",
-              "ar": "تنتقل إلى النظرية"
+              "ar": "تعود للنظرية"
             },
             {
               "en": "Take a break",
               "fr": "Mettez une pause",
-              "ar": "تأخذ استراحة"
+              "ar": "تنتظر الاستراحة"
             }
           ],
           "correctAnswer": 0
@@ -778,7 +778,7 @@
           "question": {
             "en": "The group is bored. You:",
             "fr": "Le groupe s'ennuie. Vous :",
-            "ar": "المجموعة تشعر بالملل. أنت:"
+            "ar": "إذا شعرت بملل المتكوّنين، فإنك:"
           },
           "options": [
             {
@@ -789,17 +789,17 @@
             {
               "en": "Introduce a dynamic activity",
               "fr": "Introduisez une activité dynamique",
-              "ar": "تقدم نشاطاً ديناميكياً"
+              "ar": "تقترح نشاطًا ديناميكيًا"
             },
             {
               "en": "Ask for more attention",
               "fr": "Demandez plus d'attention",
-              "ar": "تطلب مزيد من الانتباه"
+              "ar": "تطلب الانضباط"
             },
             {
               "en": "Speed up",
               "fr": "Accélérez",
-              "ar": "تسرّع"
+              "ar": "تسرّع الإيقاع"
             }
           ],
           "correctAnswer": 1
@@ -809,7 +809,7 @@
           "question": {
             "en": "Faced with a dominant personality:",
             "fr": "Face à une personnalité dominante :",
-            "ar": "أمام شخصية مهيمنة:"
+            "ar": "أمام متكوّن مهيمن داخل المجموعة، فإنك:"
           },
           "options": [
             {
@@ -820,7 +820,7 @@
             {
               "en": "You make them responsible by giving them a support role",
               "fr": "Vous la responsabilisez en lui confiant un rôle d'appui",
-              "ar": "تُسند إليه مسؤولية دور داعم"
+              "ar": "تسند له دورًا إيجابيًا داخل النشاط"
             },
             {
               "en": "You reprimand them",
@@ -840,7 +840,7 @@
           "question": {
             "en": "Pedagogical charisma is based on:",
             "fr": "Le charisme pédagogique repose sur :",
-            "ar": "الكاريزما البيداغوجية تقوم على:"
+            "ar": "الكاريزما البيداغوجية تقوم أساسًا على:"
           },
           "options": [
             {
@@ -851,17 +851,17 @@
             {
               "en": "Authenticity and congruence",
               "fr": "L'authenticité et la congruence",
-              "ar": "الأصالة والاتساق"
+              "ar": "وضوح الأسلوب وحسن التعامل مع المتكوّنين"
             },
             {
               "en": "Status",
               "fr": "Le statut",
-              "ar": "المكانة"
+              "ar": "المكانة الوظيفية"
             },
             {
               "en": "Knowledge",
               "fr": "Le savoir",
-              "ar": "المعرفة"
+              "ar": "كثرة المعرفة"
             }
           ],
           "correctAnswer": 1
@@ -881,7 +881,7 @@
           "question": {
             "en": "A colleague asks you to evaluate in their place. You:",
             "fr": "Un collègue vous demande d'évaluer à sa place. Vous :",
-            "ar": "زميل يطلب منك التقييم بدلاً منه. أنت:"
+            "ar": "زميل يطلب منك تقييم متكوّنيه بدلًا عنه، فإنك:"
           },
           "options": [
             {
@@ -892,17 +892,17 @@
             {
               "en": "Refuse and inform the coordination",
               "fr": "Refusez et informez la coordination",
-              "ar": "ترفض وتُبلغ التنسيق"
+              "ar": "ترفض"
             },
             {
               "en": "Help discreetly",
               "fr": "Aidez discrètement",
-              "ar": "تساعد بسرية"
+              "ar": "تساعده سرًا"
             },
             {
               "en": "Evaluate to help them",
               "fr": "Évaluez pour l'aider",
-              "ar": "تقيّم لمساعدته"
+              "ar": "تقيّم مجاملة"
             }
           ],
           "correctAnswer": 1
@@ -912,28 +912,28 @@
           "question": {
             "en": "The pedagogical manager wants to close the session early. You:",
             "fr": "Le responsable pédagogique veut clore la session avant la fin. Vous :",
-            "ar": "المسؤول البيداغوجي يريد إغلاق الدورة قبل النهاية. أنت:"
+            "ar": "إذا طُلب منك إنهاء التكوين قبل وقته، فإنك:"
           },
           "options": [
             {
               "en": "Firmly refuse",
               "fr": "Refusez fermement",
-              "ar": "ترفض بحزم"
+              "ar": "ترفض احترامًا للمسار التكويني"
             },
             {
               "en": "Negotiate",
               "fr": "Négociez",
-              "ar": "تفاوض"
+              "ar": "تتفاوض"
             },
             {
               "en": "Turn a blind eye",
               "fr": "Fermez les yeux",
-              "ar": "تغض الطرف"
+              "ar": "تتغاضى"
             },
             {
               "en": "Speed up the content",
               "fr": "Accélérez le contenu",
-              "ar": "تسرّع المحتوى"
+              "ar": "تختصر المحتوى"
             }
           ],
           "correctAnswer": 0
@@ -943,7 +943,7 @@
           "question": {
             "en": "You forgot a criterion. You:",
             "fr": "Vous avez oublié un critère. Vous :",
-            "ar": "نسيت معياراً. أنت:"
+            "ar": "إذا نسيت معيارًا أثناء التقييم، فإنك:"
           },
           "options": [
             {
@@ -954,17 +954,17 @@
             {
               "en": "Declare it and adjust with transparency",
               "fr": "Le déclarez et ajustez avec transparence",
-              "ar": "تُصرّح به وتعدّل بشفافية"
+              "ar": "تصرّح وتصحّح بشفافية"
             },
             {
               "en": "Add it afterward",
               "fr": "Le rajoutez après",
-              "ar": "تضيفه لاحقاً"
+              "ar": "تضيفه لاحقًا"
             },
             {
               "en": "Ignore it",
               "fr": "L'ignorez",
-              "ar": "تتجاهله"
+              "ar": "تتجاهل"
             }
           ],
           "correctAnswer": 1
@@ -974,13 +974,13 @@
           "question": {
             "en": "A trainee in difficulty asks for your help after the session. You:",
             "fr": "Un stagiaire en difficulté vous sollicite après la séance. Vous :",
-            "ar": "متدرب في صعوبة يطلبك بعد الجلسة. أنت:"
+            "ar": "أحد المتكوّنين يطلب دعمًا إضافيًا بعد الحصة، فإنك:"
           },
           "options": [
             {
               "en": "Help them within a defined framework",
               "fr": "L'aidez dans un cadre défini",
-              "ar": "تساعده في إطار محدد"
+              "ar": "تخصّص له وقتًا للدعم وفق ضوابط واضحة"
             },
             {
               "en": "Refuse",
@@ -990,12 +990,12 @@
             {
               "en": "Redirect them",
               "fr": "L'orientez",
-              "ar": "توجهه"
+              "ar": "تطلب منه الرجوع لاحقًا دون توضيح"
             },
             {
               "en": "Accept without conditions",
               "fr": "Acceptez sans condition",
-              "ar": "تقبل دون شرط"
+              "ar": "تتجاهل الطلب"
             }
           ],
           "correctAnswer": 0
@@ -1005,28 +1005,28 @@
           "question": {
             "en": "Faced with a logistical setback:",
             "fr": "Face à un imprévu logistique :",
-            "ar": "أمام ظرف طارئ لوجستي:"
+            "ar": "في حالة طارئ لوجستي أثناء التكوين، فإنك:"
           },
           "options": [
             {
               "en": "You remain calm and adapt",
               "fr": "Vous restez calme et vous vous adaptez",
-              "ar": "تبقى هادئاً وتتكيف"
+              "ar": "تحافظ على هدوئك وتتكيّف"
             },
             {
               "en": "You express your frustration",
               "fr": "Vous exprimez votre frustration",
-              "ar": "تعبر عن إحباطك"
+              "ar": "تُظهر الانزعاج"
             },
             {
               "en": "You reduce the session",
               "fr": "Vous réduisez la séance",
-              "ar": "تقلص الجلسة"
+              "ar": "تقلّص الحصة"
             },
             {
               "en": "You wait",
               "fr": "Vous attendez",
-              "ar": "تنتظر"
+              "ar": "تنتظر التعليمات"
             }
           ],
           "correctAnswer": 0
@@ -1036,7 +1036,7 @@
           "question": {
             "en": "Professional ethics means:",
             "fr": "L'éthique professionnelle, c'est :",
-            "ar": "الأخلاقيات المهنية هي:"
+            "ar": "الأخلاقيات المهنية تعني:"
           },
           "options": [
             {
@@ -1047,17 +1047,17 @@
             {
               "en": "Being fair and consistent",
               "fr": "Être juste et cohérent",
-              "ar": "أن تكون عادلاً ومتسقاً"
+              "ar": "الالتزام بالعدل والمسؤولية المهنية"
             },
             {
               "en": "Being efficient",
               "fr": "Être performant",
-              "ar": "أن تكون فعالاً"
+              "ar": "السرعة"
             },
             {
               "en": "Being fast",
               "fr": "Être rapide",
-              "ar": "أن تكون سريعاً"
+              "ar": "الفعالية فقط"
             }
           ],
           "correctAnswer": 1
@@ -1108,7 +1108,7 @@
           "question": {
             "en": "Training trainers means:",
             "fr": "Former des formateurs, c'est :",
-            "ar": "تكوين المكوّنين هو:"
+            "ar": "تكوين المكوّنين يعني أساسًا:"
           },
           "options": [
             {
@@ -1119,7 +1119,7 @@
             {
               "en": "Developing reflection and posture",
               "fr": "Développer la réflexion et la posture",
-              "ar": "تطوير التفكير والموقف"
+              "ar": "مساعدة المكوّنين على تحسين أدائهم المهني"
             },
             {
               "en": "Transmitting tools",
@@ -1129,7 +1129,7 @@
             {
               "en": "Evaluating their content",
               "fr": "Évaluer leur contenu",
-              "ar": "تقييم محتواهم"
+              "ar": "تقييم المحتوى"
             }
           ],
           "correctAnswer": 1
@@ -1139,18 +1139,18 @@
           "question": {
             "en": "You facilitate a pedagogical team meeting. You:",
             "fr": "Vous animez une réunion d'équipe pédagogique. Vous :",
-            "ar": "تُنشّط اجتماع فريق بيداغوجي. أنت:"
+            "ar": "عند تنشيط اجتماع بيداغوجي، فإنك:"
           },
           "options": [
             {
               "en": "Present your methods",
               "fr": "Présentez vos méthodes",
-              "ar": "تعرض أساليبك"
+              "ar": "تعرض تجربتك فقط"
             },
             {
               "en": "Encourage sharing and collective reflection",
               "fr": "Favorisez le partage et la réflexion collective",
-              "ar": "تشجّع المشاركة والتفكير الجماعي"
+              "ar": "تشجّع تبادل الخبرات والنقاش"
             },
             {
               "en": "Impose your practices",
@@ -1160,7 +1160,7 @@
             {
               "en": "Stay in the background",
               "fr": "Restez en retrait",
-              "ar": "تبقى في الخلف"
+              "ar": "تكتفي بالملاحظة"
             }
           ],
           "correctAnswer": 1
@@ -1170,7 +1170,7 @@
           "question": {
             "en": "A beginner trainer makes a mistake in session. You:",
             "fr": "Un formateur débutant fait une erreur lors de la séance. Vous :",
-            "ar": "مدرب مبتدئ يرتكب خطأً أثناء الجلسة. أنت:"
+            "ar": "مكوّن مبتدئ يرتكب خطأ أثناء الحصة، فإنك:"
           },
           "options": [
             {
@@ -1181,7 +1181,7 @@
             {
               "en": "Review the questions with him afterward",
               "fr": "Réviser avec lui les questions du contenu",
-              "ar": "مراجعة الأسئلة معه لاحقاً"
+              "ar": "تناقش الخطأ معه بعد الحصة"
             },
             {
               "en": "Replace them",
@@ -1201,7 +1201,7 @@
           "question": {
             "en": "The role of a pedagogical mentor:",
             "fr": "Le rôle d'un mentor pédagogique :",
-            "ar": "دور المرشد البيداغوجي:"
+            "ar": "دور المرشد البيداغوجي هو:"
           },
           "options": [
             {
@@ -1212,7 +1212,7 @@
             {
               "en": "Help reflect and take responsibility",
               "fr": "Aider à réfléchir et à se responsabiliser",
-              "ar": "المساعدة على التفكير وتحمل المسؤولية"
+              "ar": "مساعدة المكوّن على تحسين أدائه المهني"
             },
             {
               "en": "Correct",
@@ -1222,7 +1222,7 @@
             {
               "en": "Supervise",
               "fr": "Superviser",
-              "ar": "الإشراف"
+              "ar": "الإشراف فقط"
             }
           ],
           "correctAnswer": 1
@@ -1232,23 +1232,23 @@
           "question": {
             "en": "An accomplished trainer of trainers:",
             "fr": "Un formateur de formateurs accompli :",
-            "ar": "مكوّن المكوّنين المكتمل:"
+            "ar": "مكوّن المكوّنين المتكامل هو من:"
           },
           "options": [
             {
               "en": "Trains a lot",
               "fr": "Forme beaucoup",
-              "ar": "يكوِّن كثيراً"
+              "ar": "يُكوّن عددًا كبيرًا"
             },
             {
               "en": "Raises the collective level and brings out talents",
               "fr": "Élève le niveau collectif et fait émerger les talents",
-              "ar": "يرفع المستوى الجماعي ويُظهر المواهب"
+              "ar": "يساهم في رفع مستوى الفريق واكتشاف الكفاءات"
             },
             {
               "en": "Masters their subject",
               "fr": "Maîtrise son sujet",
-              "ar": "يتقن موضوعه"
+              "ar": "يتقن تخصصه فقط"
             },
             {
               "en": "Imposes their vision",

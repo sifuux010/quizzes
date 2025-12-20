@@ -29,29 +29,29 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick: () => void }) => {
   ];
 
   return (
-    <div className="flex h-full flex-col bg-white">
+    <div className="flex h-full flex-col bg-gradient-to-br from-gray-50 to-white">
       {/* Logo Section */}
-      <div className="flex items-center justify-center px-6 pt-4 pb-2">
-        <img src={logoImg} alt="Logo" className="h-40 w-auto" />
+      <div className="flex items-center justify-center px-6 pt-6 pb-4">
+        <img src={logoImg} alt="Logo" className="h-32 w-auto" />
       </div>
 
       {/* Admin Info */}
-      <div className="px-6 py-4">
-        <div className="flex items-center gap-3 p-4 bg-indigo-50 rounded-xl border border-indigo-100">
-          <div className="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+      <div className="px-4 pb-6">
+        <div className="flex items-center gap-3 p-3 bg-white rounded-2xl shadow-sm border border-gray-100/50">
+          <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-base shadow-md">
             {adminUsername ? adminUsername.charAt(0).toUpperCase() : 'A'}
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-bold text-gray-900 truncate">
+            <p className="text-sm font-semibold text-gray-900 truncate">
               {adminUsername || 'Admin'}
             </p>
-            <p className="text-xs text-indigo-600 font-medium">Administrator</p>
+            <p className="text-xs text-gray-500 font-medium">Administrator</p>
           </div>
         </div>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-4 space-y-1 overflow-y-auto">
+      <nav className="flex-1 px-4 pb-4 space-y-1.5 overflow-y-auto">
         {menuItems.map((item, index) => {
           const isActive = location.pathname === item.path;
           return (
@@ -63,25 +63,13 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick: () => void }) => {
               >
                 <Button
                   variant="ghost"
-                  className={`w-full justify-start gap-3 h-12 px-4 font-medium transition-all ${isActive
-                    ? 'bg-indigo-50 text-indigo-600 hover:bg-indigo-100 shadow-sm'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  className={`w-full justify-start gap-3 h-11 px-3.5 font-medium transition-all rounded-xl ${isActive
+                    ? 'bg-indigo-500 text-white hover:bg-indigo-600 shadow-lg shadow-indigo-200'
+                    : 'text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm'
                     }`}
                 >
-                  <div className={`p-2 rounded-lg ${isActive
-                    ? item.color === 'blue' ? 'bg-blue-100' :
-                      item.color === 'purple' ? 'bg-purple-100' :
-                        'bg-green-100'
-                    : 'bg-gray-100'
-                    }`}>
-                    <item.icon className={`h-4 w-4 ${isActive
-                      ? item.color === 'blue' ? 'text-blue-600' :
-                        item.color === 'purple' ? 'text-purple-600' :
-                          'text-green-600'
-                      : 'text-gray-500'
-                      }`} />
-                  </div>
-                  <span className="flex-1 text-left">{item.label}</span>
+                  <item.icon className={`h-4.5 w-4.5 ${isActive ? 'text-white' : 'text-gray-500'}`} />
+                  <span className="flex-1 text-left text-sm">{item.label}</span>
                   {isActive && (
                     <ChevronRight className="h-4 w-4 text-indigo-600" />
                   )}
@@ -93,16 +81,14 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick: () => void }) => {
       </nav>
 
       {/* Logout Button */}
-      <div className="p-4">
+      <div className="p-4 pt-2">
         <Button
           onClick={handleLogout}
-          variant="outline"
-          className="w-full justify-start gap-3 h-12 px-4 font-medium text-gray-600 hover:text-red-600 hover:bg-red-50 hover:border-red-200 transition-all"
+          variant="ghost"
+          className="w-full justify-start gap-3 h-11 px-3.5 font-medium text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all"
         >
-          <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-red-100">
-            <LogOut className="h-4 w-4" />
-          </div>
-          <span>{t("admin.logout")}</span>
+          <LogOut className="h-4.5 w-4.5" />
+          <span className="text-sm">{t("admin.logout")}</span>
         </Button>
       </div>
     </div>
@@ -110,10 +96,11 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick: () => void }) => {
 };
 
 const AdminLayout = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [remainingTime, setRemainingTime] = useState<number>(0);
+  const isRTL = i18n.language === 'ar';
 
   // Check token expiry on mount and periodically
   useEffect(() => {
@@ -151,9 +138,9 @@ const AdminLayout = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-['Poppins']">
+    <div className="min-h-screen bg-gray-50 font-['Poppins']" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:block fixed left-0 top-0 z-40 h-screen w-72 shadow-lg">
+      <aside className={`hidden lg:block fixed ${isRTL ? 'right-0' : 'left-0'} top-0 z-40 h-screen w-72 shadow-lg`}>
         <SidebarContent onLinkClick={() => { }} />
       </aside>
 
@@ -169,11 +156,11 @@ const AdminLayout = () => {
               onClick={() => setIsSidebarOpen(false)}
             />
             <motion.aside
-              initial={{ x: "-100%" }}
+              initial={{ x: isRTL ? "100%" : "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
+              exit={{ x: isRTL ? "100%" : "-100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed left-0 top-0 z-50 h-screen w-72 lg:hidden shadow-2xl"
+              className={`fixed ${isRTL ? 'right-0' : 'left-0'} top-0 z-50 h-screen w-72 lg:hidden shadow-2xl`}
             >
               <SidebarContent onLinkClick={() => setIsSidebarOpen(false)} />
             </motion.aside>
@@ -182,8 +169,8 @@ const AdminLayout = () => {
       </AnimatePresence>
 
       {/* Main Content */}
-      <div className="lg:pl-72">
-        <header className="sticky top-0 z-30 flex h-16 items-center justify-between bg-white/95 backdrop-blur px-6 border-b border-gray-200 shadow-sm">
+      <div className={isRTL ? 'lg:pr-72' : 'lg:pl-72'}>
+        <header className="sticky top-0 z-30 flex h-16 items-center justify-between bg-white px-6 border-b border-gray-100">
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
