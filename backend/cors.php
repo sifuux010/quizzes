@@ -8,7 +8,7 @@ require_once __DIR__ . '/config.php';
 
 $allowedOrigins = [
     ALLOWED_ORIGIN,
-    'lightseagreen-alpaca-114967.hostingersite.com'
+    'https://apc.takwin.dz'
 ];
 
 // CORS Headers

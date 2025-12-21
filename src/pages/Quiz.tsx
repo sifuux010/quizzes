@@ -514,12 +514,12 @@ const Quiz = () => {
       </AlertDialog>
 
       <AlertDialog open={showInstructions}>
-        <AlertDialogContent className="w-[95%] max-w-2xl p-0 overflow-hidden border-0 shadow-2xl max-h-[85vh] flex flex-col">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white text-center shrink-0">
-            <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
+        <AlertDialogContent className="w-[96%] sm:w-[90%] max-w-2xl p-0 overflow-hidden border-0 shadow-2xl max-h-[90vh] sm:max-h-[85vh] flex flex-col">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-4 sm:p-6 text-white text-center shrink-0">
+            <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 sm:mb-4">
               <AlertTriangle className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
             </div>
-            <AlertDialogTitle className="text-xl sm:text-2xl font-bold mb-2">
+            <AlertDialogTitle className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
               {t('quiz.instructions.title')}
             </AlertDialogTitle>
             <p className="text-blue-100 text-xs sm:text-sm px-2">
@@ -527,10 +527,10 @@ const Quiz = () => {
             </p>
           </div>
 
-          <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 bg-white overflow-y-auto">
-            <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
-              <div className="bg-orange-50 p-4 rounded-xl border border-orange-100 text-center">
-                <div className="mx-auto w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-3">
+          <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 md:space-y-6 bg-white overflow-y-auto overscroll-contain">
+            <div className="grid gap-3 sm:gap-4 md:gap-6 md:grid-cols-2">
+              <div className="bg-orange-50 p-3 sm:p-4 rounded-xl border border-orange-100 text-center">
+                <div className="mx-auto w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-2 sm:mb-3">
                   <Flag className="h-5 w-5 text-orange-600" />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{t('quiz.instructions.attempt_warning_title')}</h4>
@@ -539,8 +539,8 @@ const Quiz = () => {
                 </p>
               </div>
 
-              <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 text-center">
-                <div className="mx-auto w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+              <div className="bg-blue-50 p-3 sm:p-4 rounded-xl border border-blue-100 text-center">
+                <div className="mx-auto w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-2 sm:mb-3">
                   <Trophy className="h-5 w-5 text-blue-600" />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{t('quiz.instructions.ranking_rule_title')}</h4>
@@ -550,8 +550,8 @@ const Quiz = () => {
               </div>
             </div>
 
-            <div className="bg-red-50 p-4 rounded-xl border border-red-100 flex gap-4 items-start">
-              <div className="mt-1 shrink-0">
+            <div className="bg-red-50 p-3 sm:p-4 rounded-xl border border-red-100 flex gap-3 sm:gap-4 items-start">
+              <div className="mt-0.5 sm:mt-1 shrink-0">
                 <AlertCircle className="h-5 w-5 text-red-600" />
               </div>
               <div>
@@ -563,10 +563,10 @@ const Quiz = () => {
             </div>
           </div>
 
-          <AlertDialogFooter className="p-4 sm:p-6 bg-gray-50 border-t items-center sm:justify-center shrink-0">
+          <AlertDialogFooter className="p-3 sm:p-4 md:p-6 bg-gray-50 border-t items-center sm:justify-center shrink-0">
             <Button
               size="lg"
-              className="w-full sm:w-auto min-w-[200px] text-base sm:text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 shadow-lg hover:shadow-xl transition-all"
+              className="w-full sm:w-auto sm:min-w-[200px] text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 shadow-lg hover:shadow-xl transition-all touch-manipulation"
               onClick={() => {
                 setShowInstructions(false);
                 setIsStarted(true);
