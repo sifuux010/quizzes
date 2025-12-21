@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./pages/Landing";
 import StudentEntry from "./pages/StudentEntry";
 // import QuizList from "./pages/QuizList";
@@ -17,6 +17,7 @@ import ResultsPage from "./pages/admin/ResultsPage";
 import StudentsPage from "./pages/admin/StudentsPage";
 import ResultDetailsPage from "./pages/admin/ResultDetailsPage";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -42,8 +43,18 @@ const App = () => {
             <Route path="/" element={<Landing />} />
             <Route path="/student-entry" element={<StudentEntry />} />
             {/* <Route path="/quizzes" element={<QuizList />} /> */}
-            <Route path="/quiz/:quizId" element={<Quiz />} />
-            <Route path="/results" element={<Results />} />
+            
+            {/* Protected Routes */}
+            <Route path="/quiz/:quizId" element={
+              <ProtectedRoute>
+                <Quiz />
+              </ProtectedRoute>
+            } />
+            <Route path="/results" element={
+              <ProtectedRoute>
+                <Results />
+              </ProtectedRoute>
+            } />
 
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminLogin />} />

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -24,7 +24,21 @@ const Quiz = () => {
   const { quizId } = useParams();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   const currentLang = i18n.language as 'en' | 'fr' | 'ar';
+
+  // Additional client-side protection
+  useEffect(() => {
+    const studentName = localStorage.getItem("studentName");
+    if (!studentName) {
+      navigate('/student-entry', {
+        state: {
+          from: location.pathname,
+          message: t('auth.please_login_to_continue') || 'Please log in to continue with the quiz'
+        }
+      });
+    }
+  }, [navigate, location, t]);
 
   const [quiz, setQuiz] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -37,8 +51,8 @@ const Quiz = () => {
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [direction, setDirection] = useState(0);
-  const [showInstructions, setShowInstructions] = useState(true);
-  const [isStarted, setIsStarted] = useState(false);
+  // const [showInstructions, setShowInstructions] = useState(true); // Removed as per request
+  const [isStarted, setIsStarted] = useState(true);
 
   useEffect(() => {
     const fetchQuiz = async () => {
@@ -429,7 +443,14 @@ const Quiz = () => {
                       )}
                     </div>
                   ) : (
-                    <div className="space-y-2">
+                    <div className="space-y-4">
+                      <div className="bg-orange-50 p-4 rounded-xl border border-orange-100 text-center">
+                        <h4 className="font-bold text-orange-800 mb-1 text-sm">Première Tentative Uniquement</h4>
+                        <p className="text-xs text-orange-700">
+                          Seule votre première tentative sera comptabilisée pour le classement officiel.
+                        </p>
+                      </div>
+
                       <Button
                         size="lg"
                         onClick={handleSubmit}
@@ -474,7 +495,7 @@ const Quiz = () => {
 
       {/* Time Over Alert Dialog */}
       <AlertDialog open={isTimeOver}>
-        <AlertDialogContent onEscapeKeyDown={(e) => e.preventDefault()} onPointerDownOutside={(e) => e.preventDefault()}>
+        <AlertDialogContent onEscapeKeyDown={(e) => e.preventDefault()}>
           <AlertDialogHeader>
             <AlertDialogTitle className="flex items-center gap-2 text-red-600">
               <Clock className="h-5 w-5" />
@@ -508,72 +529,6 @@ const Quiz = () => {
           <AlertDialogFooter>
             <Button onClick={() => navigate('/')} className="w-full bg-green-600 hover:bg-green-700 text-white">
               {t("common.ok") || "OK"}
-            </Button>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-
-      <AlertDialog open={showInstructions}>
-        <AlertDialogContent className="w-[96%] sm:w-[90%] max-w-2xl p-0 overflow-hidden border-0 shadow-2xl max-h-[90vh] sm:max-h-[85vh] flex flex-col">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-4 sm:p-6 text-white text-center shrink-0">
-            <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 sm:mb-4">
-              <AlertTriangle className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
-            </div>
-            <AlertDialogTitle className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
-              {t('quiz.instructions.title')}
-            </AlertDialogTitle>
-            <p className="text-blue-100 text-xs sm:text-sm px-2">
-              {t('quiz.instructions.ministry_msg')}
-            </p>
-          </div>
-
-          <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 md:space-y-6 bg-white overflow-y-auto overscroll-contain">
-            <div className="grid gap-3 sm:gap-4 md:gap-6 md:grid-cols-2">
-              <div className="bg-orange-50 p-3 sm:p-4 rounded-xl border border-orange-100 text-center">
-                <div className="mx-auto w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-2 sm:mb-3">
-                  <Flag className="h-5 w-5 text-orange-600" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{t('quiz.instructions.attempt_warning_title')}</h4>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  {t('quiz.instructions.attempt_warning_desc')}
-                </p>
-              </div>
-
-              <div className="bg-blue-50 p-3 sm:p-4 rounded-xl border border-blue-100 text-center">
-                <div className="mx-auto w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-2 sm:mb-3">
-                  <Trophy className="h-5 w-5 text-blue-600" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{t('quiz.instructions.ranking_rule_title')}</h4>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  {t('quiz.instructions.ranking_rule_desc')}
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-red-50 p-3 sm:p-4 rounded-xl border border-red-100 flex gap-3 sm:gap-4 items-start">
-              <div className="mt-0.5 sm:mt-1 shrink-0">
-                <AlertCircle className="h-5 w-5 text-red-600" />
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{t('quiz.instructions.tech_warning_title')}</h4>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  {t('quiz.instructions.tech_warning_desc')}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <AlertDialogFooter className="p-3 sm:p-4 md:p-6 bg-gray-50 border-t items-center sm:justify-center shrink-0">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto sm:min-w-[200px] text-sm sm:text-base md:text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 shadow-lg hover:shadow-xl transition-all touch-manipulation"
-              onClick={() => {
-                setShowInstructions(false);
-                setIsStarted(true);
-                setStartTime(Date.now());
-              }}
-            >
-              {t('quiz.instructions.start_btn')}
             </Button>
           </AlertDialogFooter>
         </AlertDialogContent>

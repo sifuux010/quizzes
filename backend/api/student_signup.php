@@ -43,10 +43,18 @@ try {
     $wilaya = !empty($data['wilaya']) ? $data['wilaya'] : null;
     $insertStmt->execute([$name, $email, $phone, $hashedPassword, $wilaya]);
 
+    // Generate JWT
+    require_once __DIR__ . '/../utils/jwt.php';
+    $token = JWT::encode([
+        'id' => $pdo->lastInsertId(),
+        'email' => $email
+    ], JWT_SECRET);
+
     http_response_code(201);
     echo json_encode([
         'success' => true,
         'message' => 'Student registered successfully',
+        'token' => $token,
         'student' => [
             'id' => $pdo->lastInsertId(),
             'name' => $name,

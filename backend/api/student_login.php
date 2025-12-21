@@ -25,10 +25,18 @@ try {
         // Remove password from response
         unset($student['password']);
 
+        // Generate JWT
+        require_once __DIR__ . '/../utils/jwt.php';
+        $token = JWT::encode([
+            'id' => $student['id'],
+            'email' => $student['email']
+        ], JWT_SECRET);
+
         http_response_code(200);
         echo json_encode([
             'success' => true,
             'message' => 'Login successful',
+            'token' => $token,
             'student' => $student
         ]);
     } else {

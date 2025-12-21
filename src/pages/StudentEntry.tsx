@@ -1,22 +1,21 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Navbar } from "@/components/Navbar";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Eye, EyeOff, UserPlus, LogIn } from "lucide-react";
+import { AlertCircle, LogIn, UserPlus, Eye, EyeOff } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { LanguageToggle } from "@/components/LanguageToggle";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Navbar } from "@/components/Navbar";
+import { motion } from "framer-motion";
+
 
 const WILAYA_KEYS = [
   "adrar", "chlef", "laghouat", "oum_el_bouaghi", "batna", "bejaia", "biskra", "bechar",
@@ -73,15 +72,19 @@ const StudentEntry = () => {
       const result = await response.json();
 
       if (result.success) {
-        // Store student info in localStorage
-        localStorage.setItem("studentId", result.student.id);
-        localStorage.setItem("studentName", result.student.name);
-        localStorage.setItem("studentEmail", result.student.email);
-        localStorage.setItem("studentPhone", result.student.phone || "");
+        const token = result.token;
 
+        // Store token and minimal user info
+        localStorage.setItem('token', token);
+        localStorage.setItem('studentId', result.student.id);
+        localStorage.setItem('studentName', result.student.name);
+        localStorage.setItem('studentEmail', result.student.email);
+        localStorage.setItem('studentPhone', result.student.phone || '');
+
+        // Set auth state
         toast.success(`${t('auth.welcome_back')}, ${result.student.name}!`);
 
-
+        // Handle redirect
         const searchParams = new URLSearchParams(window.location.search);
         const redirectUrl = searchParams.get('redirect');
         navigate(redirectUrl || "/");
@@ -143,15 +146,18 @@ const StudentEntry = () => {
       const result = await response.json();
 
       if (result.success) {
-        // Store student info in localStorage
-        localStorage.setItem("studentId", result.student.id);
-        localStorage.setItem("studentName", result.student.name);
-        localStorage.setItem("studentEmail", result.student.email);
-        localStorage.setItem("studentPhone", result.student.phone || "");
+        const token = result.token;
+
+        // Store token and user info
+        localStorage.setItem('token', token);
+        localStorage.setItem('studentId', result.student.id);
+        localStorage.setItem('studentName', result.student.name);
+        localStorage.setItem('studentEmail', result.student.email);
+        localStorage.setItem('studentPhone', result.student.phone || '');
 
         toast.success(`${t('auth.welcome')}, ${result.student.name}!`);
 
-
+        // Handle redirect
         const searchParams = new URLSearchParams(window.location.search);
         const redirectUrl = searchParams.get('redirect');
         navigate(redirectUrl || "/");
